@@ -11,4 +11,12 @@ class Question {
         $this->answers = $answers;
         $this->correctAnswer = $correctAnswer;
     }
+
+    public function toArray(){
+        return [
+            "question" => $this->question,
+            "answers" => $this->answers,
+            "correctAnswer" => $this->correctAnswer
+        ];
+    }
 }
