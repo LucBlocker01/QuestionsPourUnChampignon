@@ -6,7 +6,7 @@ header("Content-Type: application/json; charset=UTF-8");
 
 require "classes/Question.php";
 
-$question = new Question("test", ["A", "B", "C", "D"], 1);
+$question = new Question("Est-ce que cette question existe?", ["A", "B", "C", "D"], 1);
 
 $question = array("question" => $question->toArray());
 
