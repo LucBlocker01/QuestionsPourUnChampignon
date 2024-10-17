@@ -6,11 +6,12 @@ header("Content-Type: application/json; charset=UTF-8");
 
 require "classes/Question.php";
 
-$question = new Question("Est-ce que cette question existe?", ["A", "B", "C", "D"], 1);
+$q1 = new Question("Est-ce que cette question existe?", ["A", "B", "C", "D"], 1);
+$q2 = new Question("Est-ce que cette question existe aussi?", ["A", "B", "C", "D"], 1);
 
 $questions = array(
-    "q1" => $question->toArray(),
-    "q2" => $question->toArray()
+    0 => $q1->toArray(),
+    1 => $q2->toArray()
 );
 
 echo json_encode($questions);
