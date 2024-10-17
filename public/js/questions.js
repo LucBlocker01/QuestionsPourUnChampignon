@@ -35,14 +35,15 @@ fetch("http://localhost:8000/src/questionGenerator.php").then(
             //Titre de la question (attribut question)
             document.getElementById("question").innerHTML = question.question
             //Réponses pour chaque question (attribut answers)
-            buttons[0].innerHTML = question.answers[0]
-            buttons[1].innerHTML = question.answers[1]
-            buttons[2].innerHTML = question.answers[2]
-            buttons[3].innerHTML = question.answers[3]
-            //Pour chaque bouton, ajouter un event de clic
+            //Pour chaque bouton, ajouter comme texte la réponse associé à la question et l'index du bouton, et ajouter un event de clic
             buttons.forEach((button, index) => {
+                button.innerHTML = question.answers[index]
+                console.log(button.innerHTML, button.innerHTML === "undefined")
+                if (button.innerHTML === "undefined") {
+                    button.classList.add("hide")
+                }
                 button.addEventListener("click", function() {
-                    //Si la bonne réponse a été sélectionné, incrémentation de +1 dans le stockage la question, puis rechargement de la page
+                    //Si la bonne réponse a été sélectionné, incrémentation de la question +1 dans le stockage, puis rechargement de la page
                     if (index === question.correctAnswer) {
                         document.getElementById("message").innerHTML = "Bonne réponse! :)"
                         localStorage.setItem("currentQuestion", qIndex+1)
@@ -51,6 +52,10 @@ fetch("http://localhost:8000/src/questionGenerator.php").then(
                         document.getElementById("message").innerHTML = "Mauvaise réponse! :("
                     }
                 })
+            })
+            
+            buttons.forEach((button, index) => {
+                
             })
         }    
         
