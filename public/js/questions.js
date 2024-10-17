@@ -9,8 +9,13 @@ fetch("http://localhost:8000/src/questionGenerator.php").then(
     response => response.json()
 ).then(
     response => {
-
-    //Récupération les clés (index des questions) de la réponse dans un tableau
+        //Si questions dans le stockage, les récupérer, sinon les stocker (pour éviter la répétition des questions en raison du mélange)
+        if (!localStorage.getItem("questions")) {
+            localStorage.setItem("questions", JSON.stringify(response))
+        } else {
+            response = JSON.parse(localStorage.getItem("questions"))
+        }
+        //Récupération les clés (index des questions) de la réponse dans un tableau
         questions = Object.keys(response);
         console.log(questions, response)
         // Si le currentQuestion est pas mis en stock, l'index est mis à la question actuelle (pour afficher la question suivante et non la première)
@@ -21,9 +26,8 @@ fetch("http://localhost:8000/src/questionGenerator.php").then(
         // Si toutes les questions ont été répondu (donc si l'index vaut la longueur de la liste des questions) redirection vers l'écran de victoire
         //Sinon voir clause else
         if (qIndex === questions.length) {
-            localStorage.getItem("currentQuestion")
-            console.log(qIndex, questions.length)
             localStorage.removeItem("currentQuestion")
+            localStorage.removeItem("questions")
             window.location.href = "win.html";
         } else {
             question = response[qIndex]
