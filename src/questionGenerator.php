@@ -8,6 +8,9 @@ require "classes/Question.php";
 
 $question = new Question("Est-ce que cette question existe?", ["A", "B", "C", "D"], 1);
 
-$question = array("question" => $question->toArray());
+$questions = array(
+    "q1" => $question->toArray(),
+    "q2" => $question->toArray()
+);
 
-echo json_encode($question);
+echo json_encode($questions);
