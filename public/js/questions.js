@@ -12,6 +12,7 @@ fetch("http://localhost:8000/src/questionGenerator.php").then(
 
     //Récupération les clés (index des questions) de la réponse dans un tableau
         questions = Object.keys(response);
+        console.log(questions, response)
         // Si le currentQuestion est pas mis en stock, l'index est mis à la question actuelle (pour afficher la question suivante et non la première)
         qIndex = 0;
         if (localStorage.getItem("currentQuestion")) {           
@@ -20,6 +21,9 @@ fetch("http://localhost:8000/src/questionGenerator.php").then(
         // Si toutes les questions ont été répondu (donc si l'index vaut la longueur de la liste des questions) redirection vers l'écran de victoire
         //Sinon voir clause else
         if (qIndex === questions.length) {
+            localStorage.getItem("currentQuestion")
+            console.log(qIndex, questions.length)
+            localStorage.removeItem("currentQuestion")
             window.location.href = "win.html";
         } else {
             question = response[qIndex]
