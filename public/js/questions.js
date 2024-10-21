@@ -8,8 +8,9 @@ async function questionFetching() {
 
 //Fonction principale
 async function main() {
+    // Récupération des questions dans le stockage
     response = JSON.parse(localStorage.getItem("questions"))
-    //Si questions dans le stockage, les récupérer, sinon les récupérer et les stocker (pour éviter la répétition des questions en raison du mélange)
+    //Si aucune question n'a été récupéré, les fetch depuis le générateur
     if (!response) {
         response = await questionFetching()
         console.log(response)
