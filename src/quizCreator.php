@@ -1,6 +1,6 @@
 <?php
 
-require "Quiz.php";
+require "classes/Quiz.php";
 
 $quiz = new Quiz(3);
 

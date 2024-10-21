@@ -1,6 +1,6 @@
 //Fonction de récupération des questions depuis le générateur php
-async function questionFetching() {
-    response = await fetch("http://localhost:8000/src/questionGenerator.php").catch(
+async function quizFetcher() {
+    response = await fetch("http://localhost:8000/src/quizCreator.php").catch(
         error => console.error("Erreur :", error)
     )
     return await response.json()
@@ -8,23 +8,21 @@ async function questionFetching() {
 
 //Fonction principale
 async function main() {
-    // Récupération des questions dans le stockage
-    response = JSON.parse(localStorage.getItem("questions"))
-    //Si aucune question n'a été récupéré, les fetch depuis le générateur
-    if (!response) {
-        response = await questionFetching()
-        console.log(response)
-        localStorage.setItem("questions", JSON.stringify(response))
+    quiz = await quizFetcher()
+    console.log(quiz)
+    if (!localStorage.getItem("questions")) {
+        localStorage.setItem("questions", JSON.stringify(quiz.questions)) 
     }
+    questions = JSON.parse(localStorage.getItem("questions"));
     //Récupération des boutons
     buttons = [document.getElementById("answer1"), 
         document.getElementById("answer2"), 
         document.getElementById("answer3"), 
         document.getElementById("answer4")]
 
-    //Récupération les clés (index des questions) de la réponse dans un tableau
-    questions = Object.keys(response);
-    console.log(questions, response)
+    //Récupération les clés (index des questions dans le quiz) de la réponse dans un tableau
+    questionsKeys = Object.keys(questions);
+    console.log(questionsKeys, questions)
     // Si le currentQuestion est pas mis en stock, l'index est mis à la question actuelle (pour afficher la question suivante et non la première)
     qIndex = 0;
     if (localStorage.getItem("currentQuestion")) {           
@@ -32,13 +30,13 @@ async function main() {
     }
     // Si toutes les questions ont été répondu (donc si l'index vaut la longueur de la liste des questions) redirection vers l'écran de victoire
     //Sinon voir clause else
-    if (qIndex === questions.length) {
+    if (qIndex === questionsKeys.length) {
         localStorage.removeItem("currentQuestion")
         localStorage.removeItem("questions")
         window.location.href = "win.html";
     } else {
-        question = response[qIndex]
-        console.log(response, question)
+        question = questions[qIndex]
+        console.log(quiz, question)
         //Titre de la question (attribut question)
         document.getElementById("question").innerHTML = question.question
         //Réponses pour chaque question (attribut answers)
