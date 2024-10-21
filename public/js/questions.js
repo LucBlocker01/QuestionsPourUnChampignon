@@ -9,7 +9,12 @@ async function quizFetcher() {
 //Fonction principale
 async function main() {
     quiz = await quizFetcher()
+    
     console.log(quiz)
+    if (!localStorage.getItem("lives")) {
+        localStorage.setItem("lives", JSON.stringify(quiz.lives)) 
+    }
+    lives = JSON.parse(localStorage.getItem("lives"));
     if (!localStorage.getItem("questions")) {
         localStorage.setItem("questions", JSON.stringify(quiz.questions)) 
     }
@@ -39,6 +44,7 @@ async function main() {
         console.log(quiz, question)
         //Titre de la question (attribut question)
         document.getElementById("question").innerHTML = question.question
+        document.getElementById("lives").innerHTML = lives;
         //Réponses pour chaque question (attribut answers)
         //Pour chaque bouton, ajouter comme texte la réponse associé à la question et l'index du bouton, et ajouter un event de clic
         buttons.forEach((button, index) => {
@@ -50,11 +56,13 @@ async function main() {
             button.addEventListener("click", function() {
                 //Si la bonne réponse a été sélectionné, incrémentation de la question +1 dans le stockage, puis rechargement de la page
                 if (index === question.correctAnswer) {
-                    document.getElementById("message").innerHTML = "Bonne réponse! :)"
+                    document.getElementById("message").innerHTML = "Bonne réponse!"
                     localStorage.setItem("currentQuestion", qIndex+1)
                     location.reload()
                 } else {
-                    document.getElementById("message").innerHTML = "Mauvaise réponse! :("
+                    document.getElementById("message").innerHTML = "Mauvaise réponse! -1 vie"
+                    lives = lives-1;
+                    document.getElementById("lives").innerHTML = lives;
                 }
             })
         })
