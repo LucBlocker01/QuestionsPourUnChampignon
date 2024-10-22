@@ -64,7 +64,10 @@ async function main() {
                     document.getElementById("message").innerHTML = "Mauvaise réponse! -1 vie"
                     lives = lives-1;
                     document.getElementById("lives").innerHTML = lives;
-                    localStorage.setItem("lives", lives) 
+                    localStorage.setItem("lives", lives);
+                    if (lives <= 0) {
+                        window.location.href = "lose.html";
+                    } 
                 }
             })
         })
