@@ -6,6 +6,13 @@ async function quizFetcher() {
     return await response.json()
 }
 
+//Fonction qui vide le stockage
+function clearStorage() {
+    localStorage.removeItem("currentQuestion")
+    localStorage.removeItem("questions")
+    localStorage.removeItem("lives")
+}
+
 //Fonction principale
 async function main() {
     quiz = await quizFetcher()
@@ -36,9 +43,7 @@ async function main() {
     // Si toutes les questions ont été répondu (donc si l'index vaut la longueur de la liste des questions) redirection vers l'écran de victoire
     //Sinon voir clause else
     if (qIndex === questionsKeys.length) {
-        localStorage.removeItem("currentQuestion")
-        localStorage.removeItem("questions")
-        localStorage.removeItem("lives")
+        clearStorage()
         window.location.href = "win.html";
     } else {
         question = questions[qIndex]
@@ -66,6 +71,7 @@ async function main() {
                     document.getElementById("lives").innerHTML = lives;
                     localStorage.setItem("lives", lives);
                     if (lives <= 0) {
+                        clearStorage()
                         window.location.href = "lose.html";
                     } 
                 }
