@@ -38,6 +38,7 @@ async function main() {
     if (qIndex === questionsKeys.length) {
         localStorage.removeItem("currentQuestion")
         localStorage.removeItem("questions")
+        localStorage.removeItem("lives")
         window.location.href = "win.html";
     } else {
         question = questions[qIndex]
@@ -63,6 +64,7 @@ async function main() {
                     document.getElementById("message").innerHTML = "Mauvaise réponse! -1 vie"
                     lives = lives-1;
                     document.getElementById("lives").innerHTML = lives;
+                    localStorage.setItem("lives", lives) 
                 }
             })
         })
