@@ -1,0 +1,65 @@
+body, html {
+    height: 100%
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    background-color : blue;
+    height: 10%
+}
+
+.sidebar {
+    width: 5%;
+}
+
+.mainbar {
+    width: 95%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainbar div {
+    color: white;
+    font-size: 200%;
+    font-weight: bold;
+    text-align: center;
+    
+}
+
+.content {
+    display: flex;
+    height: 95%;
+}
+
+.buttonList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 34%;
+}
+
+.buttonList button {
+    background-color: rgb(128, 128, 255);
+    border: solid black 1px;
+    font-size: 150%;
+    width: 50%;
+    transition: background-color 0.3s ease;
+    transition: color 0.3 ease;
+}
+
+.buttonList button:hover {
+    background-color: blue;
+    color: white;
+}
+
+.filler {
+    width: 33%;
+}
