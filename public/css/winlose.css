@@ -16,16 +16,3 @@ body {
     margin-bottom: 15%;
     margin-top: 5%;
 }
-
-button {
-    background-color: rgb(128, 128, 255);
-    border: solid black 1px;
-    font-size: 150%;
-    transition: background-color 0.3s ease;
-    transition: color 0.3s ease;
-}
-
-button:hover {
-    background-color: blue;
-    color: white;
-}

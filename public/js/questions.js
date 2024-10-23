@@ -16,6 +16,11 @@ async function main() {
         document.getElementById("answer3"), 
         document.getElementById("answer4")]
 
+    buttons[0].classList.add("noleft")
+    buttons[1].classList.add("left")
+    buttons[2].classList.add("left")
+    buttons[3].classList.add("left")
+
     //Récupération les clés (index des questions dans le quiz) de la réponse dans un tableau
     questionsKeys = Object.keys(questions);
     console.log(questionsKeys, questions)

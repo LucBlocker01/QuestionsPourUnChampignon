@@ -40,7 +40,21 @@ body {
     width: 34%;
 }
 
-.answersList button {
+.answersList button.noleft {
+    background-color: rgb(128, 128, 255);
+    border: solid black 1px;
+    font-size: 150%;
+    margin-top: 5%;
+    transition: background-color 0.3s ease;
+    transition: color 0.3s ease;
+}
+
+.answersList .noleft:hover {
+    background-color: blue;
+    color: white;
+}
+
+.answersList .left {
     background-color: rgb(128, 128, 255);
     border: solid black 1px;
     font-size: 150%;
@@ -50,10 +64,12 @@ body {
     transition: color 0.3s ease;
 }
 
-.answersList button:hover {
+.answersList .left:hover {
     background-color: blue;
     color: white;
 }
+
+
 
 .mainContentQ {
     display: flex;
