@@ -35,7 +35,7 @@ async function main() {
         console.log(quiz, question)
         //Titre de la question (attribut question)
         document.getElementById("question").innerHTML = question.question
-        document.getElementById("lives").innerHTML = lives;
+        document.getElementById("lives").innerHTML = "Vies restantes : "+lives;
         //Réponses pour chaque question (attribut answers)
         //Pour chaque bouton, ajouter comme texte la réponse associé à la question et l'index du bouton, et ajouter un event de clic
         buttons.forEach((button, index) => {
@@ -53,7 +53,7 @@ async function main() {
                 } else {
                     document.getElementById("message").innerHTML = "Mauvaise réponse! -1 vie"
                     lives = lives-1;
-                    document.getElementById("lives").innerHTML = lives;
+                    document.getElementById("lives").innerHTML = "Vies restantes : "+lives;
                     localStorage.setItem("lives", lives);
                     if (lives <= 0) {
                         localStorage.setItem("totalQuestions", questionsKeys.length)

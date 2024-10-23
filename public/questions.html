@@ -2,19 +2,34 @@
 <html>
     <head>
         <title>QuestionsPourUnChampignon</title>
+        <link rel="stylesheet" href="css/general.css">
         <link rel="stylesheet" href="css/question.css">
     </head>
     <body>
-        <p id="question"></p>
-        <div>
-            <button id="answer1"></button>
-            <button id="answer2"></button>
-            <button id="answer3"></button>
-            <button id="answer4"></button>
+        <div class="header">
+            <div class="sidebar">
+
+            </div>
+            <div class="mainbar">
+                <div>QuestionsPourUnChampignon</div>
+            </div>
+            <div class="sidebar">
+
+            </div>
         </div>
-        <div id="message"></div>
-       <div id="lives"></div>
-       <div id="progress"></div>  
+        <div class="content">
+            <div class="mainContentQ">
+                <div id="progress"></div> 
+                <div id="question"></div>
+                <div class="answersList">
+                    <button id="answer1"></button>
+                    <button id="answer2"></button>
+                    <button id="answer3"></button>
+                    <button id="answer4"></button>
+                </div>
+                <div id="lives"></div>
+                <div id="message"></div>
+            </div>
     </body>
     <script src="js/utils.js"></script>
     <script src="js/questions.js"></script>
