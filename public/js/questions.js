@@ -27,44 +27,42 @@ async function main() {
         localStorage.setItem("currentQuestion", 0)
     }
     document.getElementById("progress").innerHTML = "Question "+(qIndex+1)+"/"+questionsKeys.length;
-    // Si toutes les questions ont été répondu (donc si l'index vaut la longueur de la liste des questions) redirection vers l'écran de victoire
-    //Sinon voir clause else
-    if (qIndex === questionsKeys.length) {
-        clearStorage()
-        window.location.href = "win.html";
-    } else {
-        question = questions[qIndex]
-        console.log(quiz, question)
-        //Titre de la question (attribut question)
-        document.getElementById("question").innerHTML = question.question
-        document.getElementById("lives").innerHTML = "Vies restantes : "+lives;
-        //Réponses pour chaque question (attribut answers)
-        //Pour chaque bouton, ajouter comme texte la réponse associé à la question et l'index du bouton, et ajouter un event de clic
-        buttons.forEach((button, index) => {
-            button.innerHTML = question.answers[index]
-            console.log(button.innerHTML, button.innerHTML === "undefined")
-            if (button.innerHTML === "undefined") {
-                button.classList.add("hide")
-            }
-            button.addEventListener("click", function() {
-                //Si la bonne réponse a été sélectionné, incrémentation de la question +1 dans le stockage, puis rechargement de la page
-                if (index === question.correctAnswer) {
-                    document.getElementById("message").innerHTML = "Bonne réponse!"
+    question = questions[qIndex]
+    console.log(quiz, question)
+    //Titre de la question (attribut question)
+    document.getElementById("question").innerHTML = question.question
+    document.getElementById("lives").innerHTML = "Vies restantes : "+lives;
+    //Réponses pour chaque question (attribut answers)
+    //Pour chaque bouton, ajouter comme texte la réponse associé à la question et l'index du bouton, et ajouter un event de clic
+    buttons.forEach((button, index) => {
+        button.innerHTML = question.answers[index]
+        console.log(button.innerHTML, button.innerHTML === "undefined")
+        if (button.innerHTML === "undefined") {
+            button.classList.add("hide")
+        }
+        button.addEventListener("click", function() {
+            //Si la bonne réponse a été sélectionné, incrémentation de la question +1 dans le stockage, puis rechargement de la page
+            if (index === question.correctAnswer) {
+                document.getElementById("message").innerHTML = "Bonne réponse!"
+                if (qIndex+1 === questionsKeys.length) {
+                    clearStorage()
+                    window.location.href = "win.html"
+                } else {
                     localStorage.setItem("currentQuestion", qIndex+1)
                     location.reload()
-                } else {
-                    document.getElementById("message").innerHTML = "Mauvaise réponse! -1 vie"
-                    lives = lives-1;
-                    document.getElementById("lives").innerHTML = "Vies restantes : "+lives;
-                    localStorage.setItem("lives", lives);
-                    if (lives <= 0) {
-                        localStorage.setItem("totalQuestions", questionsKeys.length)
-                        window.location.href = "lose.html";
-                    } 
                 }
-            })
+            } else {
+                document.getElementById("message").innerHTML = "Mauvaise réponse! -1 vie"
+                lives = lives-1;
+                document.getElementById("lives").innerHTML = "Vies restantes : "+lives;
+                localStorage.setItem("lives", lives);
+                if (lives <= 0) {
+                    localStorage.setItem("totalQuestions", questionsKeys.length)
+                    window.location.href = "lose.html";
+                } 
+            }
         })
-    }
+    })
 }
 
 main();
