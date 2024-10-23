@@ -23,6 +23,8 @@ async function main() {
     qIndex = 0;
     if (localStorage.getItem("currentQuestion")) {           
         qIndex = parseInt(localStorage.getItem("currentQuestion"));
+    } else {
+        localStorage.setItem("currentQuestion", 0)
     }
     document.getElementById("progress").innerHTML = "Question "+(qIndex+1)+"/"+questionsKeys.length;
     // Si toutes les questions ont été répondu (donc si l'index vaut la longueur de la liste des questions) redirection vers l'écran de victoire
