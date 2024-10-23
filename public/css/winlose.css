@@ -1,0 +1,31 @@
+body {
+    background: linear-gradient(white 25%, blue 99%)
+}
+
+.messageText {
+    text-align: center;
+    margin-bottom: 15%;
+    font-size: 125%;
+}
+
+.titleGame {
+    background-color: blue;
+    border: solid black 1px;
+    padding: 1%;
+    font-size: 200%;
+    margin-bottom: 15%;
+    margin-top: 5%;
+}
+
+button {
+    background-color: rgb(128, 128, 255);
+    border: solid black 1px;
+    font-size: 150%;
+    transition: background-color 0.3s ease;
+    transition: color 0.3s ease;
+}
+
+button:hover {
+    background-color: blue;
+    color: white;
+}

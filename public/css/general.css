@@ -46,13 +46,20 @@ body {
     width: 34%;
 }
 
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
 .buttonList button {
     background-color: rgb(128, 128, 255);
     border: solid black 1px;
     font-size: 150%;
-    width: 50%;
     transition: background-color 0.3s ease;
-    transition: color 0.3 ease;
+    transition: color 0.3s ease;
 }
 
 .buttonList button:hover {

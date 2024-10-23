@@ -1,19 +1,3 @@
-//Fonction de récupération des questions depuis le générateur php
-async function quizFetcher() {
-    response = await fetch("http://localhost:8000/src/quizCreator.php").catch(
-        error => console.error("Erreur :", error)
-    )
-    return await response.json()
-}
-
-//Fonction qui vide le stockage
-function clearStorage() {
-    localStorage.removeItem("currentQuestion")
-    localStorage.removeItem("questions")
-    localStorage.removeItem("lives")
-}
-
-//Fonction principale
 async function main() {
     quiz = await quizFetcher()
     
@@ -72,15 +56,11 @@ async function main() {
                     document.getElementById("lives").innerHTML = lives;
                     localStorage.setItem("lives", lives);
                     if (lives <= 0) {
-                        clearStorage()
+                        localStorage.setItem("totalQuestions", questionsKeys.length)
                         window.location.href = "lose.html";
                     } 
                 }
             })
-        })
-        
-        buttons.forEach((button, index) => {
-            
         })
     }
 }
