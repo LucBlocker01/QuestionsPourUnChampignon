@@ -31,6 +31,29 @@ function generateQuestions($difficulty) {
                 ["Combien d'heures dans une journée?", ["27", "22", "24"], 2],
                 ["Quel est la 20ème lettre de l'alphabet?", ["C", "O", "T"], 2]
             ];
+            case "easy" :
+                $dataQ = [
+                    ["6x7 = ?", ["47", "43", "41", "42"], 3],
+                    ["Où se situe l'Empire State Building?", ["New York", "Seattle", "Los Angeles", "Washington"], 0],
+                    ["En quel année a commencé la 1ère Guerre Mondiale?", ["1918", "1915", "1914", "1912"], 2],
+                    ["Quel est l'intrus?", ["Courgette", "Citrouille", "Maïs", "Tomate"], 3],
+                    ["Quel planète est la plus proche du Soleil?", ["Vénus", "Jupiter", "Mercure", "La Terre"], 2],
+                    ["Un omnivore mange :", ["Des hommes", "Des Plantes et de la viande", "De la viande", "Des OVNIS"], 1],
+                    ["En quel année a eu lieu la Révolution Française?", ["1784", "1789", "1788", "1798"], 1],
+                    ["Trouver le nombre suivant dans la suite de nombres : 64, 128, 356, 512, ?", ["1024", "1026", "1025", "1021"], 0],
+                    ["Quel est le carré de 25?", ["3", "9", "5", "25"], 2],
+                    ["Qui a peint la Joconde?", ["Léonard de Vinci", "Pablo Picasso", "Rembrandt", "Le Caravage"], 0],
+                    ["Quel pays n'appartient pas à l'Union Européenne?", ["Espagne", "Suisse", "France", "Bulgarie"], 1],
+                    ["Quel est le plus grand pays au monde?", ["Chine", "Etats-Unis", "Portugal", "Russie"], 3],
+                    ["Quel est la plus grande lune du Système Solaire?", ["Io", "Titan", "La Lune", "Ganymède"], 3],
+                    ["Combien de côtés possède un octogone?", ["8", "7", "5", "10"], 0],
+                    ["Combien de touches sur un piano standard?", ["83", "86", "88", "90"], 2],
+                    ["La comète Halley reviens tous les :", ["80 ans", "3000 ans", "76 ans", "6 mois"], 2],
+                    ["Combien d'os dans un squelette adulte?", ["204", "202", "206", "208"], 2],
+                    ["Où se trouve l'humérus?'", ["Dans la jambe", "Dans le bras", "Dans l'abdomen", "Dans la main"], 1],
+                    ["Quel élément chimique est représenté par 'H'?", ["Hydrogène", "Oxygène", "Hassium", "Hélium"], 0],
+                    ["Qu'est-ce qui se trouve au centre de l'atome?", ["Des électrons", "Le noyau", "Des photons", "Des quarks"], 1]
+                ];
     }
 
     $questions = [];

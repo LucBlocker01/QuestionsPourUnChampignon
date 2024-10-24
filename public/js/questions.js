@@ -68,6 +68,16 @@ async function main() {
                 } 
             }
         })
+        console.log(quiz)
+        switch(quiz.difficulty) {
+            case "easy":
+                document.body.classList.add("easy")
+                document.getElementById("question").classList.add("easy")
+                document.getElementById("progress").classList.add("easy")
+                document.getElementById("lives").classList.add("easy")
+                document.querySelector(".answersList").classList.add("easy")
+                document.querySelector(".header").classList.add("easy")
+        }
     })
 }
 

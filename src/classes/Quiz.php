@@ -10,13 +10,14 @@ class Quiz implements JsonSerializable {
     public function __construct($lives) {
         $this->difficulty = "easy";
         $this->lives = $lives;
-        $this->questions = generateQuestions("very easy");
+        $this->questions = generateQuestions("easy");
     }
 
     public function jsonSerialize(): mixed {
         return [
             'lives' => $this->lives,
             'questions' => $this->questions,
+            'difficulty' => $this->difficulty
         ];
     }
 }

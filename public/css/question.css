@@ -6,8 +6,21 @@ body {
     background: linear-gradient(white 25%, blue 99%)
 }
 
+body.easy {
+    background: linear-gradient(white 25%, green 99%)
+}
+
 #progress {
     background-color: blue;
+    border: solid black 1px;
+    color: white;
+    margin-top: 1%;
+    padding: 1%;
+    font-size: 250%;
+}
+
+#progress.easy {
+    background-color: green;
     border: solid black 1px;
     color: white;
     margin-top: 1%;
@@ -24,8 +37,26 @@ body {
     font-size: 150%;
 }
 
+#question.easy {
+    background-color: green;
+    border: solid black 1px;
+    color: white;
+    margin-top: 1%;
+    padding: 1%;
+    font-size: 150%;
+}
+
 #lives {
     background-color: blue;
+    border: solid black 1px;
+    color: white;
+    margin-top: 1%;
+    padding: 1%;
+    font-size: 150%;
+}
+
+#lives.easy {
+    background-color: green;
     border: solid black 1px;
     color: white;
     margin-top: 1%;
@@ -49,8 +80,22 @@ body {
     transition: color 0.3s ease;
 }
 
+.answersList.easy button.noleft {
+    background-color: rgb(160, 255, 128);
+    border: solid black 1px;
+    font-size: 150%;
+    margin-top: 5%;
+    transition: background-color 0.3s ease;
+    transition: color 0.3s ease;
+}
+
 .answersList .noleft:hover {
     background-color: blue;
+    color: white;
+}
+
+.answersList.easy .noleft:hover {
+    background-color: green;
     color: white;
 }
 
@@ -64,9 +109,29 @@ body {
     transition: color 0.3s ease;
 }
 
+.answersList.easy button.left {
+    background-color: rgb(160, 255, 128);
+    border: solid black 1px;
+    font-size: 150%;
+    margin-top: 5%;
+    transition: background-color 0.3s ease;
+    transition: color 0.3s ease;
+}
+
 .answersList .left:hover {
     background-color: blue;
     color: white;
+}
+
+.answersList.easy .left:hover {
+    background-color: green;
+    color: white;
+}
+
+.header.easy {
+    display: flex;
+    background-color : green;
+    height: 10%
 }
 
 
