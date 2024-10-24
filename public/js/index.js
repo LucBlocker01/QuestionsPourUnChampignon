@@ -1,3 +1,3 @@
 document.getElementById("start").addEventListener("click", function() {
-    window.location.href = "questions.html";
+    location.replace("questions.html");
 });

@@ -49,7 +49,7 @@ async function main() {
                 //Si c'était la dernière question, cesser la partie, afficher l'écran de victoire et vider tout le stockage
                 if (qIndex+1 === questionsKeys.length) {
                     clearStorage()
-                    window.location.href = "win.html"
+                    location.replace("win.html");
                 } else {
                     //Sinon passer à la question suivante et rafraîchir la page
                     localStorage.setItem("currentQuestion", qIndex+1)
@@ -61,10 +61,10 @@ async function main() {
                 lives = lives-1;
                 document.getElementById("lives").innerHTML = "Vies restantes : "+lives;
                 localStorage.setItem("lives", lives);
-                //Si le nombre de vies est à 0 ou moins, cesser la partie et afficher l'écran de perte
+                //Si le nombre de vies est à 0 ou moins, cesser la partie et afficher l'écran de perte.
                 if (lives <= 0) {
                     localStorage.setItem("totalQuestions", questionsKeys.length)
-                    window.location.href = "lose.html";
+                    location.replace("lose.html");
                 } 
             }
         })
