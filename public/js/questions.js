@@ -1,11 +1,12 @@
 async function main() {
+    //Récupération du quiz
     quiz = await quizFetcher()
-    
-    console.log(quiz)
+    //Stockage des vies s'ils n'existent pas
     if (!localStorage.getItem("lives")) {
         localStorage.setItem("lives", JSON.stringify(quiz.lives)) 
     }
     lives = JSON.parse(localStorage.getItem("lives"));
+    //Stockage des questions du quiz s'ils n'existent pas
     if (!localStorage.getItem("questions")) {
         localStorage.setItem("questions", JSON.stringify(quiz.questions)) 
     }
@@ -16,32 +17,28 @@ async function main() {
         document.getElementById("answer3"), 
         document.getElementById("answer4")]
 
-    buttons[0].classList.add("noleft")
-    buttons[1].classList.add("left")
-    buttons[2].classList.add("left")
-    buttons[3].classList.add("left")
-
-    //Récupération les clés (index des questions dans le quiz) de la réponse dans un tableau
-    questionsKeys = Object.keys(questions);
-    console.log(questionsKeys, questions)
-    // Si le currentQuestion est pas mis en stock, l'index est mis à la question actuelle (pour afficher la question suivante et non la première)
-    qIndex = 0;
+    //Récupération des clés (index des questions dans le quiz) de la réponse dans un tableau
+    questionsKeys = Object.keys(questions)
+    qIndex = 0
+    // Si le currentQuestion est mis en stock, l'index est mis à la question actuelle (pour afficher la question suivante et non la première)
     if (localStorage.getItem("currentQuestion")) {           
         qIndex = parseInt(localStorage.getItem("currentQuestion"));
     } else {
         localStorage.setItem("currentQuestion", 0)
     }
+    //Elément de progression
     document.getElementById("progress").innerHTML = "Question "+(qIndex+1)+"/"+questionsKeys.length;
+    //Récupération de la question actuelle
     question = questions[qIndex]
-    console.log(quiz, question)
-    //Titre de la question (attribut question)
+    //Affichage du titre de la question (attribut question)
     document.getElementById("question").innerHTML = question.question
+    //Affichage des vies restantes
     document.getElementById("lives").innerHTML = "Vies restantes : "+lives;
-    //Réponses pour chaque question (attribut answers)
     //Pour chaque bouton, ajouter comme texte la réponse associé à la question et l'index du bouton, et ajouter un event de clic
     buttons.forEach((button, index) => {
+        //Affichage des réponses
         button.innerHTML = question.answers[index]
-        console.log(button.innerHTML, button.innerHTML === "undefined")
+        //Si le bouton n'est pas associé à une réponse, le cacher
         if (button.innerHTML === "undefined") {
             button.classList.add("hide")
         }
@@ -49,18 +46,22 @@ async function main() {
             //Si la bonne réponse a été sélectionné, incrémentation de la question +1 dans le stockage, puis rechargement de la page
             if (index === question.correctAnswer) {
                 document.getElementById("message").innerHTML = "Bonne réponse!"
+                //Si c'était la dernière question, cesser la partie, afficher l'écran de victoire et vider tout le stockage
                 if (qIndex+1 === questionsKeys.length) {
                     clearStorage()
                     window.location.href = "win.html"
                 } else {
+                    //Sinon passer à la question suivante et rafraîchir la page
                     localStorage.setItem("currentQuestion", qIndex+1)
                     location.reload()
                 }
             } else {
+                //Sinon, diminution du nombre de vies de 1, y compris dans le stockage
                 document.getElementById("message").innerHTML = "Mauvaise réponse! -1 vie"
                 lives = lives-1;
                 document.getElementById("lives").innerHTML = "Vies restantes : "+lives;
                 localStorage.setItem("lives", lives);
+                //Si le nombre de vies est à 0 ou moins, cesser la partie et afficher l'écran de perte
                 if (lives <= 0) {
                     localStorage.setItem("totalQuestions", questionsKeys.length)
                     window.location.href = "lose.html";
