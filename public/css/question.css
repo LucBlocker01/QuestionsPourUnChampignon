@@ -2,12 +2,21 @@
     display: none;
 }
 
+body.loading {
+    visibility: hidden;
+}
+
+body.loaded {
+    visibility: visible;
+    transition: visibility 0s 0.5s, background 0.5s ease;
+}
+
 body {
-    background: linear-gradient(white 25%, blue 99%)
+    background: linear-gradient(white 25%, blue 99%);
 }
 
 body.easy {
-    background: linear-gradient(white 25%, green 99%)
+    background: linear-gradient(white 25%, green 99%);
 }
 
 #progress {

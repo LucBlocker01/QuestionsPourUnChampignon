@@ -12,3 +12,4 @@ function clearStorage() {
     localStorage.removeItem("questions")
     localStorage.removeItem("lives")
 }
+
