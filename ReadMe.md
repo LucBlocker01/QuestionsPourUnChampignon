@@ -1,7 +1,7 @@
 # QuestionsPourUnChampignon
 ## Auteur : Lucas Hureaux
 
-### Ce projet est un quiz. Le but : répondre aux 20 questions faciles. Vous disposez pour cela de 3 vies. Vous gagnez lorsque vous avez répondu aux 20 questions sans perdre vos 3 vies.
+### Ce projet est un quiz. Le but : répondre à toutes les questions. Il y a pour le moment 2 niveaux de difficultés, 5 au total sont prévus. Vous disposez pour cela de 3 vies. Vous gagnez lorsque vous avez répondu à toutes les questions de la difficulté sans perdre vos 3 vies.
 
 ## Instructions :
 
