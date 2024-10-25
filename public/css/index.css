@@ -38,12 +38,12 @@ body {
     color: white;
 }
 
-#veryeasy:hover {
-    background-color: rgb(128, 128, 255);
+#easy:hover {
+    background-color: rgb(160, 255, 128);;
     color: white;
 }
 
-#easy:hover {
+#easy.selected {
     background-color: rgb(160, 255, 128);;
     color: white;
 }

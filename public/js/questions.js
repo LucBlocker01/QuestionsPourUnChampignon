@@ -93,6 +93,8 @@ function displayQuestion() {
         //Si le bouton n'est pas associé à une réponse, le cacher
         if (button.innerHTML === "undefined") {
             button.classList.add("hide")
+        } else {
+            button.classList.remove("hide")
         }
     })
 }
