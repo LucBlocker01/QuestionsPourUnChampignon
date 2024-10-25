@@ -1,3 +1,49 @@
 body {
     background: linear-gradient(white 25%, blue 99%)
 }
+
+.difficulty {
+    background-color: blue;
+    border: solid black 1px;
+    color: white;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: 250%;
+    text-align: center;
+}
+
+.difficultyList {
+    margin-bottom: 10%;
+}
+
+#veryeasy {
+    background-color: blue;
+    transition: background-color 0.3s ease;
+    color: white;
+}
+
+#veryeasy:hover {
+    background-color: rgb(128, 128, 255);
+    color: white;
+}
+
+#veryeasy.selected {
+    background-color: rgb(128, 128, 255);
+    color: white;
+}
+
+#easy {
+    background-color: green;
+    transition: background-color 0.3s ease;
+    color: white;
+}
+
+#veryeasy:hover {
+    background-color: rgb(128, 128, 255);
+    color: white;
+}
+
+#easy:hover {
+    background-color: rgb(160, 255, 128);;
+    color: white;
+}
