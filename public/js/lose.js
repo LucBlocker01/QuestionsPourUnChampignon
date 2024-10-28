@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 })
 
+document.getElementById("loser").play()
+
 
 
 document.getElementById("messageText").innerHTML = 
