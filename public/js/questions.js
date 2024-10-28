@@ -19,9 +19,8 @@ async function main() {
             //Si la bonne réponse a été sélectionné, incrémentation de la question +1 dans le stockage, puis rechargement de la page
             if (index === question.correctAnswer) {
                 document.getElementById("message").innerHTML = "Bonne réponse!"
-                //Si c'était la dernière question, cesser la partie, afficher l'écran de victoire et vider tout le stockage
+                //Si c'était la dernière question, cesser la partie et afficher l'écran de victoire
                 if (qIndex+1 === questionsKeys.length) {
-                    clearStorage()
                     location.replace("win.html");
                 } else {
                     //Sinon passer à la question suivante et jouer le son correct answer
