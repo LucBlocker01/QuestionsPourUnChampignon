@@ -2,6 +2,6 @@
 
 require "classes/Quiz.php";
 
-$quiz = new Quiz(3);
+$quiz = new Quiz();
 
 echo json_encode($quiz);

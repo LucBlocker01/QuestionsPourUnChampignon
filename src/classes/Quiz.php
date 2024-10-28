@@ -7,9 +7,9 @@ class Quiz implements JsonSerializable {
     private array $questions;
     private string $difficulty;
 
-    public function __construct($lives) {
+    public function __construct() {
         $this->difficulty = $_POST["difficulty"];
-        $this->lives = $lives;
+        $this->lives = $_POST["lives"];
         $this->questions = generateQuestions($_POST["difficulty"]);
     }
 
