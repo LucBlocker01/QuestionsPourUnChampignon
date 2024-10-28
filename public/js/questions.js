@@ -6,7 +6,6 @@ async function main() {
         localStorage.setItem("lives", JSON.stringify(quiz.lives)) 
     }
     lives = JSON.parse(localStorage.getItem("lives"));
-    console.log(lives);
     //Stockage des questions du quiz s'ils n'existent pas
     if (!localStorage.getItem("questions")) {
         localStorage.setItem("questions", JSON.stringify(quiz.questions)) 
@@ -25,17 +24,23 @@ async function main() {
                     clearStorage()
                     location.replace("win.html");
                 } else {
-                    //Sinon passer à la question suivante
+                    //Sinon passer à la question suivante et jouer le son correct answer
+                    document.getElementById("correct-answer").play();
                     localStorage.setItem("currentQuestion", qIndex+1)
                     displayQuestion()
                 }
             } else {
-                //Sinon, diminution du nombre de vies de 1, y compris dans le stockage
+                //Sinon, diminution du nombre de vies de 1, y compris dans le stockage, et jouer le son de mauvaise réponse
+                
+                document.getElementById("wrong-answer").play().then(() => {
+                    setTimeout(() => {
+                        document.getElementById("wrong-answer").currentTime = 1;
+                    }   , 50)
+                });
                 document.getElementById("message").innerHTML = "Mauvaise réponse! -1 vie"
                 lives = lives-1;
                 document.getElementById("lives").innerHTML = "Vies restantes : "+lives;
                 localStorage.setItem("lives", lives);
-                console.log(lives);
                 //Si le nombre de vies est à 0 ou moins, cesser la partie et afficher l'écran de perte.
                 if (lives <= 0) {
                     localStorage.setItem("totalQuestions", questionsKeys.length)
@@ -43,7 +48,6 @@ async function main() {
                 }
             }
         })
-        console.log(quiz)
         switch(quiz.difficulty) {
             case "very easy":
                 document.body.classList.add("veryeasy")
