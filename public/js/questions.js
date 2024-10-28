@@ -24,7 +24,11 @@ async function main() {
                     location.replace("win.html");
                 } else {
                     //Sinon passer à la question suivante et jouer le son correct answer
-                    document.getElementById("correct-answer").play();
+                    document.getElementById("correct-answer").play().then(() => {
+                        setTimeout(() => {
+                            document.getElementById("correct-answer").currentTime = 1;
+                        },50)
+                    });
                     localStorage.setItem("currentQuestion", qIndex+1)
                     displayQuestion()
                 }
