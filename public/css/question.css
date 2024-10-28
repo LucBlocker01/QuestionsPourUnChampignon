@@ -137,6 +137,12 @@ body.easy {
     color: white;
 }
 
+.header.veryeasy {
+    display: flex;
+    background-color : blue;
+    height: 10%
+}
+
 .header.easy {
     display: flex;
     background-color : green;

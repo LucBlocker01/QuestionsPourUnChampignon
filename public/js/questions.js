@@ -45,13 +45,21 @@ async function main() {
         })
         console.log(quiz)
         switch(quiz.difficulty) {
-            case "easy":
-                document.body.classList.add("easy")
-                document.getElementById("question").classList.add("easy")
-                document.getElementById("progress").classList.add("easy")
-                document.getElementById("lives").classList.add("easy")
-                document.querySelector(".answersList").classList.add("easy")
-                document.querySelector(".header").classList.add("easy")
+            case "very easy":
+                document.body.classList.add("veryeasy")
+                document.getElementById("question").classList.add("veryeasy")
+                document.getElementById("progress").classList.add("veryeasy")
+                document.getElementById("lives").classList.add("veryeasy")
+                document.querySelector(".answersList").classList.add("veryeasy")
+                document.querySelector(".header").classList.add("veryeasy")
+            break;
+            default:
+                document.body.classList.add(quiz.difficulty)
+                document.getElementById("question").classList.add(quiz.difficulty)
+                document.getElementById("progress").classList.add(quiz.difficulty)
+                document.getElementById("lives").classList.add(quiz.difficulty)
+                document.querySelector(".answersList").classList.add(quiz.difficulty)
+                document.querySelector(".header").classList.add(quiz.difficulty)
         }
     })
 }

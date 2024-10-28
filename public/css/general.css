@@ -9,7 +9,7 @@ body {margin: 0;
 
 .header {
     display: flex;
-    background-color : blue;
+    background-color : rgb(163, 163, 163);
     height: 10%
 }
 
@@ -55,7 +55,7 @@ body {margin: 0;
 }
 
 button {
-    background-color: rgb(128, 128, 255);
+    background-color: rgb(163, 163, 163);
     border: solid black 1px;
     font-size: 150%;
     transition: background-color 0.3s ease;
@@ -63,7 +63,7 @@ button {
 }
 
 button:hover {
-    background-color: blue;
+    background-color: rgb(71, 71, 71);
     color: white;
 }
 

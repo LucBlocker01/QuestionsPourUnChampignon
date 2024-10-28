@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(white 25%, blue 99%)
+    background: linear-gradient(white 25%, rgb(163, 163, 163) 99%)
 }
 
 .messageText {
@@ -9,7 +9,7 @@ body {
 }
 
 .titleGame {
-    background-color: blue;
+    background-color: rgb(163, 163, 163);
     border: solid black 1px;
     padding: 1%;
     font-size: 200%;

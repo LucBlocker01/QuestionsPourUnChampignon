@@ -1,9 +1,9 @@
 body {
-    background: linear-gradient(white 25%, blue 99%)
+    background: linear-gradient(white 25%, rgb(163, 163, 163) 99%)
 }
 
 .difficulty {
-    background-color: blue;
+    background-color: rgb(163, 163, 163);
     border: solid black 1px;
     color: white;
     margin-top: 5%;
