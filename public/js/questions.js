@@ -24,22 +24,15 @@ async function main() {
                     location.replace("win.html");
                 } else {
                     //Sinon passer à la question suivante et jouer le son correct answer
-                    document.getElementById("correct-answer").play().then(() => {
-                        setTimeout(() => {
-                            document.getElementById("correct-answer").currentTime = 1;
-                        },50)
-                    });
+                    document.getElementById("correct-answer").currentTime = 0;
+                    document.getElementById("correct-answer").play()
                     localStorage.setItem("currentQuestion", qIndex+1)
                     displayQuestion()
                 }
             } else {
                 //Sinon, diminution du nombre de vies de 1, y compris dans le stockage, et jouer le son de mauvaise réponse
-                
-                document.getElementById("wrong-answer").play().then(() => {
-                    setTimeout(() => {
-                        document.getElementById("wrong-answer").currentTime = 1;
-                    }   , 50)
-                });
+                document.getElementById("wrong-answer").currentTime = 0;
+                document.getElementById("wrong-answer").play()
                 document.getElementById("message").innerHTML = "Mauvaise réponse! -1 vie"
                 lives = lives-1;
                 document.getElementById("lives").innerHTML = "Vies restantes : "+lives;
