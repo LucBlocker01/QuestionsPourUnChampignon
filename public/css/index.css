@@ -16,6 +16,18 @@ body {
     margin-bottom: 10%;
 }
 
+.buttonList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 34%;
+}
+
+.buttonList button {
+    margin-top: 5%;
+}
+
 #veryeasy {
     background-color: blue;
     transition: background-color 0.3s ease;

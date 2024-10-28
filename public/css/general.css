@@ -38,14 +38,6 @@ body {margin: 0;
     height: 95%;
 }
 
-.buttonList {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 34%;
-}
-
 .mainContent {
     display: flex;
     flex-direction: column;

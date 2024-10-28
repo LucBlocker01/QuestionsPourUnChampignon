@@ -15,4 +15,4 @@
 
 ### 4. Ouvrir un navigateur web et taper dans la boîte URL "[localhost:8000/public/index.html](http://localhost:8000/public/index.html)"
 
-### 5. Bonne chance!
+### 5. Suivez les instructions en cliquant sur "Instructions" dans le menu principal

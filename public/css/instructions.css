@@ -1,0 +1,27 @@
+body {
+    background: linear-gradient(white 25%, rgb(163, 163, 163) 99%)
+}
+
+.instructions {
+    background-color: rgb(163, 163, 163);
+    border: solid black 1px;
+    color: white;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: 250%;
+    text-align: center;
+}
+
+.instructionsText {
+    background-color: rgb(163, 163, 163);
+    border: solid black 1px;
+    color: white;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: 150%;
+    text-align: center;
+}
+
+.line {
+    margin: 2% 5% 2% 5%;
+}
