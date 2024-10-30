@@ -8,7 +8,7 @@ require "classes/Question.php";
 
 function generateQuestions($difficulty) {
     switch ($difficulty) {
-        case "very easy" :
+        case "veryeasy" :
             $dataQ = [
                 ["Quel est le nom du quiz?", ["QuestionsPourUnChampignon", "The Impossible Quiz", "Projet QCM"], 0],
                 ["Où se situe la Tour Eiffel?", ["Washington", "Paris", "Sydney"], 1],

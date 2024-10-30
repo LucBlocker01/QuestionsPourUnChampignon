@@ -9,7 +9,7 @@ body {margin: 0;
 
 .header {
     display: flex;
-    background-color : rgb(163, 163, 163);
+    background-color : rgb(132, 132, 132);
     height: 10%
 }
 
@@ -30,7 +30,7 @@ body {margin: 0;
     font-size: 200%;
     font-weight: bold;
     text-align: center;
-    
+
 }
 
 .content {

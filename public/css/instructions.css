@@ -1,9 +1,9 @@
 body {
-    background: linear-gradient(white 25%, rgb(163, 163, 163) 99%)
+    background: linear-gradient(white 25%, rgb(132, 132, 132) 99%)
 }
 
 .instructions {
-    background-color: rgb(163, 163, 163);
+    background-color: rgb(132, 132, 132);
     border: solid black 1px;
     color: white;
     margin-top: 5%;
@@ -13,7 +13,7 @@ body {
 }
 
 .instructionsText {
-    background-color: rgb(163, 163, 163);
+    background-color: rgb(132, 132, 132);
     border: solid black 1px;
     color: white;
     margin-top: 5%;
