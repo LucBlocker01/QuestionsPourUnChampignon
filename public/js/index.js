@@ -10,7 +10,7 @@ if (!localStorage.getItem("difficulty")) {
     localStorage.setItem("difficulty", "very easy")
     document.getElementById("veryeasy").classList.add("selected")
 } else {
-    const difficulty = localStorage.getItem("difficulty")
+    let difficulty = localStorage.getItem("difficulty")
     difficulty === "very easy" && (difficulty = "veryeasy")
     document.getElementById(difficulty).classList.add("selected")
 }
