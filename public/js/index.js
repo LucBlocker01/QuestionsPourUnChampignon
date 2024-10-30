@@ -9,8 +9,11 @@ document.getElementById("instructions").addEventListener("click", function() {
 if (!localStorage.getItem("difficulty")) {
     localStorage.setItem("difficulty", "very easy")
     document.getElementById("veryeasy").classList.add("selected")
+} else {
+    const difficulty = localStorage.getItem("difficulty")
+    difficulty === "very easy" && (difficulty = "veryeasy")
+    document.getElementById(difficulty).classList.add("selected")
 }
-
 let buttons = [
     document.getElementById("veryeasy"),
     document.getElementById("easy"),
@@ -22,9 +25,7 @@ buttons.forEach((button) => {
         if (localStorage.getItem("difficulty") === "veryeasy") {
             localStorage.setItem("difficulty", "very easy")
         }
-        buttons.forEach((buton) => {
-            buton.classList.remove("selected")
-        })
+        document.querySelector(".selected").classList.remove("selected")
         button.classList.add("selected") 
     })
 })
