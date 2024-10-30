@@ -35,3 +35,15 @@ function clearStorage() {
     localStorage.removeItem("lives")
 }
 
+const sound = new Audio("sound/interface-button-154180.mp3")
+
+document.querySelectorAll("button").forEach(button => {
+    if (!button.classList.contains("disabled")) {
+        button.addEventListener("mouseover", () => {
+            console.log("works")
+            sound.currentTime = 0;
+            sound.play()
+        })
+    }
+})
+
