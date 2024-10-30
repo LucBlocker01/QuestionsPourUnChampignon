@@ -1,13 +1,13 @@
 //Fonction de récupération des questions depuis le générateur php
 async function quizFetcher() {
     switch(localStorage.getItem("difficulty")) {
-        case "very easy" :
+        case "very easy":
             lives = 5;
             break;
-        case "easy" :
+        case "easy":
             lives = 4;
             break;
-        case "impossible"  :
+        case "impossible":
             lives = 1;
             break;
         default :

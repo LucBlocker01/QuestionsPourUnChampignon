@@ -8,7 +8,7 @@ document.getElementById("loser").play()
 
 
 
-document.getElementById("messageText").innerHTML = 
+document.getElementById("messageText").innerHTML =
 "Vous êtes tombé à court de vies. Vous avez répondu à "
 +localStorage.getItem("currentQuestion")
 +"/"+localStorage.getItem("totalQuestions")

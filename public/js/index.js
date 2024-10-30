@@ -26,6 +26,6 @@ buttons.forEach((button) => {
             localStorage.setItem("difficulty", "very easy")
         }
         document.querySelector(".selected").classList.remove("selected")
-        button.classList.add("selected") 
+        button.classList.add("selected")
     })
 })

@@ -3,12 +3,12 @@ async function main() {
     quiz = await quizFetcher()
     //Stockage des vies s'ils n'existent pas
     if (!localStorage.getItem("lives")) {
-        localStorage.setItem("lives", JSON.stringify(quiz.lives)) 
+        localStorage.setItem("lives", JSON.stringify(quiz.lives))
     }
     lives = JSON.parse(localStorage.getItem("lives"));
     //Stockage des questions du quiz s'ils n'existent pas
     if (!localStorage.getItem("questions")) {
-        localStorage.setItem("questions", JSON.stringify(quiz.questions)) 
+        localStorage.setItem("questions", JSON.stringify(quiz.questions))
     }
     questions = JSON.parse(localStorage.getItem("questions"));
     qIndex = 0
@@ -73,15 +73,15 @@ document.addEventListener("DOMContentLoaded", async function() {
 
 function displayQuestion() {
     //Récupération des boutons
-    buttons = [document.getElementById("answer1"), 
-        document.getElementById("answer2"), 
-        document.getElementById("answer3"), 
+    buttons = [document.getElementById("answer1"),
+        document.getElementById("answer2"),
+        document.getElementById("answer3"),
         document.getElementById("answer4")]
 
     //Récupération des clés (index des questions dans le quiz) de la réponse dans un tableau
     questionsKeys = Object.keys(questions)
     // Si le currentQuestion est mis en stock, l'index est mis à la question actuelle (pour afficher la question suivante et non la première)
-    if (localStorage.getItem("currentQuestion")) {           
+    if (localStorage.getItem("currentQuestion")) {
         qIndex = parseInt(localStorage.getItem("currentQuestion"));
     } else {
         localStorage.setItem("currentQuestion", 0)
