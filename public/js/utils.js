@@ -38,7 +38,7 @@ function clearStorage() {
 const sound = new Audio("sound/interface-button-154180.mp3")
 
 document.querySelectorAll("button").forEach(button => {
-    if (!button.classList.contains("disabled")) {
+    if (!button.classList.contains("disabled") && !button.classList.contains("selected")) {
         button.addEventListener("mouseover", () => {
             console.log("works")
             sound.currentTime = 0;
