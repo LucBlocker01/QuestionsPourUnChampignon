@@ -9,9 +9,11 @@ document.getElementById("instructions").addEventListener("click", function() {
 if (!localStorage.getItem("difficulty")) {
     localStorage.setItem("difficulty", "veryeasy")
     document.getElementById("veryeasy").classList.add("selected")
+    document.getElementById("veryeasy").classList.removeEventListener("mouseover", playSoundHover)
 } else {
     let difficulty = localStorage.getItem("difficulty")
     document.getElementById(difficulty).classList.add("selected")
+    document.getElementById(difficulty).removeEventListener("mouseover", playSoundHover)
 }
 let buttons = [
     document.getElementById("veryeasy"),
@@ -21,7 +23,10 @@ let buttons = [
 buttons.forEach((button) => {
     button.addEventListener("click", function() {
         localStorage.setItem("difficulty", button.id)
-        document.querySelector(".selected").classList.remove("selected")
+        let selectedButton = document.querySelector(".selected")
+        selectedButton.classList.remove("selected")
+        selectedButton.addEventListener("mouseover", playSoundHover)
         button.classList.add("selected")
+        button.removeEventListener("mouseover", playSoundHover)
     })
 })

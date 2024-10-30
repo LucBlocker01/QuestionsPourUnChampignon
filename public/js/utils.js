@@ -37,12 +37,14 @@ function clearStorage() {
 
 const sound = new Audio("sound/interface-button-154180.mp3")
 
+function playSoundHover() {
+  sound.currentTime = 0;
+  sound.play()
+}
+
 document.querySelectorAll("button").forEach(button => {
-    if (!button.classList.contains("disabled") && !button.classList.contains("selected")) {
-        button.addEventListener("mouseover", () => {
-            sound.currentTime = 0;
-            sound.play()
-        })
+    if (!button.classList.contains("disabled")) {
+        button.addEventListener("mouseover", playSoundHover)
     }
 })
 
