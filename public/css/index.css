@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(white 25%, rgb(163, 163, 163) 99%)
+    background: linear-gradient(white 25%, rgb(132, 132, 132) 99%)
 }
 
 .difficulty {
@@ -51,12 +51,28 @@ body {
 }
 
 #easy:hover {
-    background-color: rgb(160, 255, 128);;
+    background-color: rgb(160, 255, 128);
     color: white;
 }
 
 #easy.selected {
-    background-color: rgb(160, 255, 128);;
+    background-color: rgb(160, 255, 128);
+    color: white;
+}
+
+#medium {
+    background-color: olive;
+    transition: background-color 0.3s ease;
+    color: white;
+}
+
+#medium:hover {
+    background-color: rgb(248, 248, 99);
+    color: white;
+}
+
+#medium.selected {
+    background-color: rgb(248, 248, 99);
     color: white;
 }
 

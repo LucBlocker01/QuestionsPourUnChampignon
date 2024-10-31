@@ -56,6 +56,40 @@ function generateQuestions($difficulty) {
                 ["Qu'est-ce qui se trouve au centre de l'atome?", ["Des électrons", "Le noyau", "Des photons", "Des quarks"], 1]
             ];
             break;
+        case "medium" :
+            $dataQ = [
+                ["45×3+27÷3−18 = ?", ["126", "114", "167", "222", "132"], 0],
+                ["Quel pays utilise le Yen? (¥)", ["Corée du Sud", "Chine", "Inde", "Myanmar", "Japon"], 4],
+                ["Cérès est :", ["Un asteroïde", "Une planète", "Une lune", "Une planète naine", "Une comète"], 3],
+                ["Quel est la capitale de la Russie?", ["Paris", "Moscou", "Prague", "Madrid", "Copenhague"], 1],
+                ["Quel planète est incliné de presque 90° sur son axe?", ["Jupiter", "Vénus", "Mercure", "Uranus", "Mars"], 3],
+                ["Quel est la somme des 3 angles d'un triangle?", ["360°", "270°", "180°", "90°", "On ne peut pas additionner des angles"], 2],
+                ["Quel est la probabilité de répondre bon à cette question si vous choisissez au hasard?", ["25%", "25%", "50%", "60%", "Euh..."], 4],
+                ["Combien de chiffres après la virgule dans Pi?", ["Infini", "10 000", "100 000", "1 000 000", "10 000 000"], 0],
+                ["Quel est l'intrus?", ["Bhoutan", "Turkménistan", "Tonga", "Chine", "Laos"], 2],
+                ["Qui a peint la Naissance de Vénus?", ["Léonard de Vinci", "Van Gogh", "Botticelli", "Hokusai", "Claude Monet"], 2],
+                ["Qu'est-ce qui contrôle la quantité de sang dans le corps?", ["Moelle osseuse", "Rate", "Amygdales", "Coeur", "Artères"], 1],
+                ["Quel est le plus petit pays au monde?", ["Luxembourg", "Andorre", "Vatican", "Lebanon", "Tuvalu"], 2],
+                ["Quel est la plus grande étoile connu à ce jour?", ["Soleil", "Bételgeuse", "VY Canis Majoris", "R136a1", "UY Scuti"], 4],
+                ["Combien de diagonales possède un heptagone?", ["11", "16", "12", "14", "9"], 3],
+                ["Quelle est la fréquence du 'La' standard, utilisée pour accorder les instruments dans l'orchestre?", ["400 Hz", "420 Hz", "440 Hz", "480 Hz", "450 Hz"], 2],
+                ["Combien d'éclipses solaire se produisent par an en moyenne?", ["1", "2", "3", "4", "5"], 1],
+                ["Trouver le nombre suivant dans la suite de nombres : 81, 243, 729, 2187, ?", ["6567", "6563", "6561", "6557", "6570"], 2],
+                ["Combien de secondes dans 1 heure?", ["2400", "3200", "3600", "3800", "4200"], 2],
+                ["Quel est la température moyenne de la Terre?", ["12 °C", "11 °C", "14 °C", "18 °C", "15 °C"], 4],
+                ["Quel style de danse est associé aux claquettes?", ["Le Charleston", "Le Jazz", "Les Claquettes américaines", "La Salsa", "Le Flamenco"], 2],
+                ["Quel est la langue officielle de l'Algérie?", ["Arabe", "Anglais", "Espagnol", "Français", "Italien"], 0],
+                ["Qui a écrit Le Tartuffe?", ["Molière", "Victor Hugo", "Gustave Flaubert", "Emile Zola", "Jean-Paul Sartre"], 0],
+                ["Quel est le plus grand désert au monde?", ["Sahara", "Désert de l'Antartique", "Désert du Gobi", "Désert d’Arabie", "Désert du Kalahari"], 1],
+                ["En quel année Neil Armstrong a marché sur la Lune?", ["1968", "1973", "1966", "1969", "1971"], 3],
+                ["Qui a découvert la pénicilline?", ["Louis Pasteur", "Marie Curie", "Nikola Tesla", "Alexander Fleming", "Albert Einstein"], 3],
+                ["Quel est le produit de 12 et 15?", ["180", "120", "225", "210", "200"], 0],
+                ["Que signifie 'guépard' en Anglais?", ["Lion", "Cheetah", "Hyena", "Guepard", "Leopard"], 1],
+                ["Dans quel état se trouve le parc de Yellowstone?", ["Colorado", "Texas", "Idaho", "Montana", "Wyoming"], 4],
+                ["Où se trouve le plus haut mont des Etats-Unis?", ["Alaska", "Colorado", "Mississipi", "Hawaï", "Arizona"], 0],
+                ["Combien de fois on peut soustraire 10 de 100?", ["10", "9", "1", "11", "Autant de fois qu'on veut"], 2],
+            ];
+            break;
     }
 
     $questions = [];

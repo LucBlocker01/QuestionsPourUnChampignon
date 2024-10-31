@@ -18,6 +18,7 @@ if (!localStorage.getItem("difficulty")) {
 let buttons = [
     document.getElementById("veryeasy"),
     document.getElementById("easy"),
+    document.getElementById("medium")
 ]
 
 buttons.forEach((button) => {
