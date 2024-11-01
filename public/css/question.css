@@ -23,6 +23,10 @@ body.medium {
     background: linear-gradient(white 25%, olive 99%);
 }
 
+body.hard {
+    background: linear-gradient(white 25%, darkorange 99%);
+}
+
 #progress {
     background-color: blue;
     border: solid black 1px;
@@ -38,6 +42,10 @@ body.medium {
 
 #progress.medium {
     background-color: olive;
+}
+
+#progress.hard {
+    background-color: darkorange;
 }
 
 #question {
@@ -57,6 +65,10 @@ body.medium {
     background-color: olive;
 }
 
+#question.hard {
+    background-color: darkorange;
+}
+
 
 #lives {
     background-color: blue;
@@ -73,6 +85,10 @@ body.medium {
 
 #lives.medium {
     background-color: olive;
+}
+
+#lives.hard {
+    background-color: darkorange;
 }
 
 .answersList {
@@ -99,6 +115,10 @@ body.medium {
     background-color: rgb(248, 248, 99);
 }
 
+.answersList.hard button.noleft {
+    background-color: rgb(248, 201, 99);
+}
+
 .answersList .noleft:hover {
     background-color: blue;
     color: white;
@@ -111,6 +131,11 @@ body.medium {
 
 .answersList.medium .noleft:hover {
     background-color: olive;
+    color: white;
+}
+
+.answersList.hard .noleft:hover {
+    background-color: darkorange;
     color: white;
 }
 
@@ -132,6 +157,10 @@ body.medium {
     background-color: rgb(248, 248, 99);
 }
 
+.answersList.hard button.left {
+    background-color: rgb(248, 201, 99);
+}
+
 .answersList .left:hover {
     background-color: blue;
     color: white;
@@ -144,6 +173,11 @@ body.medium {
 
 .answersList.medium .left:hover {
     background-color: olive;
+    color: white;
+}
+
+.answersList.hard .left:hover {
+    background-color: darkorange;
     color: white;
 }
 
@@ -162,6 +196,12 @@ body.medium {
 .header.medium {
     display: flex;
     background-color : olive;
+    height: 10%
+}
+
+.header.hard {
+    display: flex;
+    background-color : darkorange;
     height: 10%
 }
 
