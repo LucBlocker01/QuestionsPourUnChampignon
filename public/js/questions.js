@@ -79,4 +79,29 @@ function displayQuestion() {
         button.innerHTML === "undefined" ? button.classList.add("hide")
         : button.classList.remove("hide")
     })
+    //Gérer le timer
+    if (["hard", "impossible"].includes(localStorage.getItem("difficulty"))) {
+      let timer = 20
+      switch(localStorage.getItem("difficulty")) {
+        case "hard":
+          timer = 20;
+          break;
+        case "impossible":
+          timer = 10;
+          break;
+      }
+      document.getElementById("timer").classList.remove("hide")
+      startTimer(timer);
+    }
+}
+
+function startTimer(timer) {
+  if (timer >= 0) {
+    console.log(timer)
+    document.getElementById("timer").innerHTML = timer;
+    timer--
+    setTimeout(() => startTimer(timer), "1000")
+  } else {
+    document.getElementById("timer").innerHTML = "bip bip!";
+  }
 }
