@@ -111,9 +111,6 @@ function generateQuestions($difficulty) {
                 ["(1+(5x4-7)x3)+5x(60x3+5x5)-67 = ?", ["1000", "997", "1004", "1013", "998"], 4],
                 ["Quel est la différence entre le produit de 12 et 15 et la somme de 60 et 45 ?", ["72", "80", "70", "75", "77"], 3],
                 ["Dans quel pays est né le reggae?", ["Haïti", "France", "Jamaïque", "Myanmar", "Australie"], 2],
-                ["Quel est le tempo le plus rapide?", ["Vivace", "Andante", "Allegro", "Presto", "Adagio"], 3],
-                ["Quel est le tempo moyen d'un morceau de tempo 'Allegro'?", ["108-132 BPM", "76-108 BPM", "140-160 BPM", "60-78 BPM", "132-140 BPM"], 0],
-                ["Quel symbole musical représente un volume très doux?", ["MF", "F", "FF", "P", "MP"], 3],
                 ["Quel est l'échelle de mesure du volume sonore'?", ["Hertz", "Amplitude", "Décibel", "Lumens", "Centi-grade"], 2],
                 ["Qui était le premier président des Etats-Unis?", ["Abraham Lincoln", "George Washington", "Thomas Jefferson", "John Adams", "James Madison"], 1],
                 ["Quel civilisation ancienne a construit les pyramides?", ["Les Romains", "Les Grecs", "Les Egyptiens", "Les Mayas", "Les Aztèques"], 2],
@@ -133,7 +130,7 @@ function generateQuestions($difficulty) {
                 ["Quel est le nom du livre sacré de l'hindouisme?", ["Les Vedas", "La Bible", "Le Tao Te Ching", "Le Coran", "La Torah"], 0],
                 ["Quel est le jeûne sacré observé par les musulmans pendant le mois de Ramadan?", ["Seder", "Sawm ", "Carême", "Yom Kippour", "Navratri"], 1],
                 ["Quel est le nombre premier le plus grand connu jusqu'en 2023?", ["2^77,232,917 − 1", "2^82,589,933 − 1", "2^19,937 − 1", "2^31 − 1", "2^37 − 1"], 1],
-                ["Combien de zéros dans le Googol?", ["80", "100", "Plus que l'on peut écrire dans l'Univers", "0", "1 000 000"], 1],
+                ["Combien de zéros dans le milliard?", ["8", "9", "12", "6", "15"], 1],
                 ["Quel est le plus petit nombre entier qui ne peut être écrit comme la somme de deux nombres premiers?", ["2", "6", "5", "4", "9"], 3],
                 ["Quel jeu de cartes est souvent considéré comme le plus populaire dans les casinos?", ["Rami", "Bridge", "Blackjack", "Poker", "Baccarat"], 2],
                 ["Quel site archéologique péruvien est souvent considéré comme une des Sept Merveilles du monde moderne?", ["Le Colisée", "Le Christ Rédempteur", "Petra", "Chichen Itza", "Machu Pichu"], 4],
@@ -142,6 +139,15 @@ function generateQuestions($difficulty) {
                 ["Quel est le nom de la première sonde spatiale à avoir quitté notre Système Solaire?", ["Voyager 1", "Voyager 2", "New Horizons", "Pioneer 10", "Aucune sonde n'a quitté le Système Solaire"], 0],
                 ["Quel type de galaxies est le plus souvent trouvé dans les groupes de galaxies?", ["Lenticulaires", "Spirales", "Irrégulières", "Elliptiques", "Actions"], 1],
                 ["Quel est le principal moyen utilisé pour détecter les exoplanètes?", ["L'observation directe", "Les mesures de la luminosité", "L'imagerie infrarouge", "La méthode des transits", "L'effet Doppler"], 3],
+                ["Combien de départements dans l'Héxagone?", ["101", "96", "18", "98", "103"], 1],
+                ["Quel partie de la plante est responsable de la photosynthèse?", ["Les fleurs", "La tige", "Les pétales", "Les feuilles", "Les racines"], 3],
+                ["Quel est la proportion d'eau salée sur Terre?", ["90%", "80%", "50%", "97%", "99%"], 3],
+            ];
+            break;
+        case "impossible" : [
+                ["Quel est le tempo le plus rapide?", ["Vivace", "Andante", "Allegro", "Presto", "Adagio"], 3],
+                ["Quel est le tempo moyen d'un morceau de tempo 'Allegro'?", ["108-132 BPM", "76-108 BPM", "140-160 BPM", "60-78 BPM", "132-140 BPM"], 0],
+                ["Quel symbole musical représente un volume très doux?", ["MF", "F", "FF", "P", "MP"], 3],
             ];
             break;
     }
