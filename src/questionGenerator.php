@@ -129,7 +129,6 @@ function generateQuestions($difficulty) {
                 ["Quel événement est célébré à Noël dans le christianisme?", ["La dernière Cène", "L'Ascension de Jésus", "La Pentecôte", "La naissance de Jésus", "La résurrection de Jésus"], 3],
                 ["Quel est le nom du livre sacré de l'hindouisme?", ["Les Vedas", "La Bible", "Le Tao Te Ching", "Le Coran", "La Torah"], 0],
                 ["Quel est le jeûne sacré observé par les musulmans pendant le mois de Ramadan?", ["Seder", "Sawm ", "Carême", "Yom Kippour", "Navratri"], 1],
-                ["Quel est le nombre premier le plus grand connu jusqu'en 2023?", ["2^77,232,917 − 1", "2^82,589,933 − 1", "2^19,937 − 1", "2^31 − 1", "2^37 − 1"], 1],
                 ["Combien de zéros dans le milliard?", ["8", "9", "12", "6", "15"], 1],
                 ["Quel est le plus petit nombre entier qui ne peut être écrit comme la somme de deux nombres premiers?", ["2", "6", "5", "4", "9"], 3],
                 ["Quel jeu de cartes est souvent considéré comme le plus populaire dans les casinos?", ["Rami", "Bridge", "Blackjack", "Poker", "Baccarat"], 2],
@@ -142,6 +141,7 @@ function generateQuestions($difficulty) {
                 ["Combien de départements dans l'Héxagone?", ["101", "96", "18", "98", "103"], 1],
                 ["Quel partie de la plante est responsable de la photosynthèse?", ["Les fleurs", "La tige", "Les pétales", "Les feuilles", "Les racines"], 3],
                 ["Quel est la proportion d'eau salée sur Terre?", ["90%", "80%", "50%", "97%", "99%"], 3],
+                ["Combien de chambres possède notre coeur?", ["2", "4", "6", "1", "On n'appelle pas ça des chambres"], 1],
             ];
             break;
         case "impossible" : [
