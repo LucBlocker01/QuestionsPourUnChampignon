@@ -6,10 +6,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
 document.getElementById("loser").play()
 
+let res;
 
+localStorage.getItem("lives") === "0" ? res = "Vous êtes tombé à court de vies." : res = "Le temps est écoulé."
 
 document.getElementById("messageText").innerHTML =
-"Vous êtes tombé à court de vies. Vous avez répondu à "
+res+" Vous avez répondu à "
 +localStorage.getItem("currentQuestion")
 +"/"+localStorage.getItem("totalQuestions")
 +" questions.";
