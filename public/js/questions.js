@@ -1,4 +1,5 @@
 async function main() {
+  let timerId
     //Récupération du quiz
     quiz = await quizFetcher()
     //Stockage des vies s'ils n'existent pas
@@ -7,6 +8,7 @@ async function main() {
     //Stockage des questions du quiz s'ils n'existent pas
     !localStorage.getItem("questions") && (localStorage.setItem("questions", JSON.stringify(quiz.questions)))
     questions = JSON.parse(localStorage.getItem("questions"));
+    //Définition de qIndex à 0 et afficher la première question
     qIndex = 0
     displayQuestion()
     //Pour chaque bouton, ajouter comme texte la réponse associé à la question et l'index du bouton, et ajouter un event de clic
@@ -19,7 +21,7 @@ async function main() {
                 if (qIndex + 1 === questionsKeys.length) {
                     location.replace("win.html");
                 } else {
-                    //Sinon passer à la question suivante et jouer le son correct answer
+                    //Sinon, afficher la question suivante et jouer le son correct answer
                     document.getElementById("correct-answer").currentTime = 0;
                     document.getElementById("correct-answer").play()
                     localStorage.setItem("currentQuestion", qIndex + 1)
@@ -40,6 +42,7 @@ async function main() {
                 }
             }
         })
+        //Ajout de la classe correspondant à la difficulté du quiz aux divers composantes de la page
         document.body.classList.add(quiz.difficulty)
         document.getElementById("question").classList.add(quiz.difficulty)
         document.getElementById("progress").classList.add(quiz.difficulty)
@@ -49,7 +52,10 @@ async function main() {
     })
 }
 
+//Initialisation de l'id du timer
+let timerId;
 
+//Après chargement du DOM, appeler main et changement des classes du body pour afficher le contenu
 document.addEventListener("DOMContentLoaded", async function () {
     main();
     document.body.classList.remove("loading");
@@ -82,6 +88,9 @@ function displayQuestion() {
     //Gérer le timer
     if (["hard", "impossible"].includes(localStorage.getItem("difficulty"))) {
       let timer = 20
+      //Arrêter le timer déjà en route
+      clearTimeout(timerId)
+      //20 secondes pour "difficile", 10 secondes pour "impossible"
       switch(localStorage.getItem("difficulty")) {
         case "hard":
           timer = 20;
@@ -90,18 +99,21 @@ function displayQuestion() {
           timer = 10;
           break;
       }
+      //Afficher le timer
       document.getElementById("timer").classList.remove("hide")
+      //Démarrage du timer
       startTimer(timer);
     }
 }
 
 function startTimer(timer) {
+  //Si le timer n'est pas en-dessous de 0, updater le contenu de timer, diminution du timer de 1, rappeler la fonction avec un setTimeout 1 seconde après
   if (timer >= 0) {
-    console.log(timer)
     document.getElementById("timer").innerHTML = timer;
     timer--
-    setTimeout(() => startTimer(timer), "1000")
+    timerId = setTimeout(() => startTimer(timer), 1000)
   } else {
-    document.getElementById("timer").innerHTML = "bip bip!";
+    //Sinon, perdu!
+    location.replace("lose.html")
   }
 }
