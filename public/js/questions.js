@@ -25,6 +25,7 @@ async function main() {
                     document.getElementById("correct-answer").currentTime = 0;
                     document.getElementById("correct-answer").play()
                     localStorage.setItem("currentQuestion", qIndex + 1)
+                    localStorage.removeItem("timer")
                     displayQuestion()
                 }
             } else {
@@ -88,22 +89,23 @@ function displayQuestion() {
     })
     //Gérer le timer
     if (["hard", "impossible"].includes(localStorage.getItem("difficulty"))) {
-      let timer = 20
       //Arrêter le timer déjà en route
       clearTimeout(timerId)
       //20 secondes pour "difficile", 10 secondes pour "impossible"
-      switch(localStorage.getItem("difficulty")) {
-        case "hard":
-          timer = 20;
-          break;
-        case "impossible":
-          timer = 10;
-          break;
+      if (!localStorage.getItem("timer")) {
+        switch(localStorage.getItem("difficulty")) {
+          case "hard":
+            localStorage.setItem("timer", 20);
+            break;
+          case "impossible":
+            localStorage.setItem("timer", 10);
+            break;
+        }
       }
       //Afficher le timer
       document.getElementById("timer").classList.remove("hide")
       //Démarrage du timer
-      startTimer(timer);
+      startTimer(localStorage.getItem("timer"));
     }
 }
 
@@ -112,7 +114,13 @@ function startTimer(timer) {
   if (timer >= 0) {
     document.getElementById("timer").innerHTML = timer;
     timer--
+    localStorage.setItem("timer", timer)
     timerId = setTimeout(() => startTimer(timer), 1000)
+    if (timer === 4) {
+      const tick = new Audio("sound/timer-with-chime-101253.mp3")
+      tick.currentTime = 0;
+      tick.play();
+    }
   } else {
     //Sinon, perdu!
     location.replace("lose.html")

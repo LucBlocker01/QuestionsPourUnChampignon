@@ -33,6 +33,7 @@ function clearStorage() {
     localStorage.removeItem("currentQuestion")
     localStorage.removeItem("questions")
     localStorage.removeItem("lives")
+    localStorage.removeItem("timer")
 }
 
 const sound = new Audio("sound/interface-button-154180.mp3")
