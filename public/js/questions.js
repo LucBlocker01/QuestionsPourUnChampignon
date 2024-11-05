@@ -56,6 +56,8 @@ async function main() {
 
 //Initialisation de l'id du timer
 let timerId;
+//initialisation du son tick
+const tick = new Audio("sound/timer-with-chime-101253.mp3")
 
 //Après chargement du DOM, appeler main et changement des classes du body pour afficher le contenu
 document.addEventListener("DOMContentLoaded", async function () {
@@ -91,6 +93,8 @@ function displayQuestion() {
     if (["hard", "impossible"].includes(localStorage.getItem("difficulty"))) {
       //Arrêter le timer déjà en route
       clearTimeout(timerId)
+      //Arrêter le son déjà en route
+      tick.pause();
       //20 secondes pour "difficile", 10 secondes pour "impossible"
       if (!localStorage.getItem("timer")) {
         switch(localStorage.getItem("difficulty")) {
@@ -117,7 +121,6 @@ function startTimer(timer) {
     localStorage.setItem("timer", timer)
     timerId = setTimeout(() => startTimer(timer), 1000)
     if (timer === 4) {
-      const tick = new Audio("sound/timer-with-chime-101253.mp3")
       tick.currentTime = 0;
       tick.play();
     }
