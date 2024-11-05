@@ -47,6 +47,7 @@ async function main() {
         document.getElementById("question").classList.add(quiz.difficulty)
         document.getElementById("progress").classList.add(quiz.difficulty)
         document.getElementById("lives").classList.add(quiz.difficulty)
+        document.getElementById("timer").classList.add(quiz.difficulty)
         document.querySelector(".answersList").classList.add(quiz.difficulty)
         document.querySelector(".header").classList.add(quiz.difficulty)
     })
