@@ -15,13 +15,13 @@ async function main() {
     buttons.forEach((button, index) => {
         button.addEventListener("click", function () {
             //Si la bonne réponse a été sélectionné, incrémentation de la question +1 dans le stockage, puis rechargement de la page
-            if (index === question.correctAnswer) {
+            if (button.innerHTML === question.correctAnswer) {
                 document.getElementById("message").innerHTML = "Bonne réponse!"
                 //Si c'était la dernière question, cesser la partie et afficher l'écran de victoire
                 if (qIndex + 1 === questionsKeys.length) {
                     location.replace("win.html");
                 } else {
-                    //Sinon, afficher la question suivante et jouer le son correct answer
+                    //Sinon, afficher la question suivante, réinitialisation du timer et jouer le son correct answer
                     document.getElementById("correct-answer").currentTime = 0;
                     document.getElementById("correct-answer").play()
                     localStorage.setItem("currentQuestion", qIndex + 1)
