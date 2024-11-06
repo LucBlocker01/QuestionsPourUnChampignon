@@ -26,7 +26,7 @@ async function main() {
   } else {
     document.getElementById("validation").addEventListener("click",function () {
       //Si la bonne réponse a été sélectionné, incrémentation de la question +1 dans le stockage, puis rechargement de la page
-      if (document.querySelector("input").value === question.correctAnswer) {
+      if (document.querySelector("input").value.toLowerCase() === question.correctAnswer) {
         correct()
       } else {
         wrong()

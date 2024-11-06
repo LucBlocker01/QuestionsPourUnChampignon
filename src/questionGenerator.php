@@ -146,7 +146,7 @@ function generateQuestions($difficulty) {
             break;
         case "extreme" :
             $dataQ = [
-                ["Quel est la proportion d'eau salée sur Terre?", ["90%", "80%", "50%", "97%", "99%"], "97%"],
+                ["Quel est la proportion d'eau salée sur Terre?", ["90%", "80%", "50%", "97%", "99%"], "test"],
             ];
             break;
         case "impossible" :
