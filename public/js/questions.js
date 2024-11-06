@@ -17,33 +17,20 @@ async function main() {
       button.addEventListener("click", function () {
           //Si la bonne réponse a été sélectionné, incrémentation de la question +1 dans le stockage, puis rechargement de la page
           if (button.innerHTML === question.correctAnswer) {
-              document.getElementById("message").innerHTML = "Bonne réponse!"
-              //Si c'était la dernière question, cesser la partie et afficher l'écran de victoire
-              if (qIndex + 1 === questionsKeys.length) {
-                  location.replace("win.html");
-              } else {
-                  //Sinon, afficher la question suivante, réinitialisation du timer et jouer le son correct answer
-                  document.getElementById("correct-answer").currentTime = 0;
-                  document.getElementById("correct-answer").play()
-                  localStorage.setItem("currentQuestion", qIndex + 1)
-                  localStorage.removeItem("timer")
-                  displayQuestion()
-              }
+            correct()
           } else {
-              //Sinon, diminution du nombre de vies de 1, y compris dans le stockage, et jouer le son de mauvaise réponse
-              document.getElementById("wrong-answer").currentTime = 0
-              document.getElementById("wrong-answer").play()
-              document.getElementById("message").innerHTML = "Mauvaise réponse! -1 vie"
-              lives--
-              document.getElementById("lives").innerHTML = "Vies restantes : " + lives;
-              localStorage.setItem("lives", lives);
-              //Si le nombre de vies est à 0 ou moins, cesser la partie et afficher l'écran de perte.
-              if (lives <= 0) {
-                  localStorage.setItem("totalQuestions", questionsKeys.length)
-                  location.replace("lose.html");
-              }
+            wrong()
           }
       })
+    })
+  } else {
+    document.getElementById("validation").addEventListener("click",function () {
+      //Si la bonne réponse a été sélectionné, incrémentation de la question +1 dans le stockage, puis rechargement de la page
+      if (document.querySelector("input").value === question.correctAnswer) {
+        correct()
+      } else {
+        wrong()
+      }
     })
   }
   //Ajout de la classe correspondant à la difficulté du quiz aux divers composantes de la page
@@ -126,6 +113,36 @@ function displayQuestion() {
       //Démarrage du timer
       startTimer(localStorage.getItem("timer"));
     }
+}
+
+function correct() {
+  document.getElementById("message").innerHTML = "Bonne réponse!"
+  //Si c'était la dernière question, cesser la partie et afficher l'écran de victoire
+  if (qIndex + 1 === questionsKeys.length) {
+      location.replace("win.html");
+  } else {
+      //Sinon, afficher la question suivante, réinitialisation du timer et jouer le son correct answer
+      document.getElementById("correct-answer").currentTime = 0;
+      document.getElementById("correct-answer").play()
+      localStorage.setItem("currentQuestion", qIndex + 1)
+      localStorage.removeItem("timer")
+      displayQuestion()
+  }
+}
+
+function wrong() {
+  //Diminution du nombre de vies de 1, y compris dans le stockage, et jouer le son de mauvaise réponse
+  document.getElementById("wrong-answer").currentTime = 0
+  document.getElementById("wrong-answer").play()
+  document.getElementById("message").innerHTML = "Mauvaise réponse! -1 vie"
+  lives--
+  document.getElementById("lives").innerHTML = "Vies restantes : " + lives;
+  localStorage.setItem("lives", lives);
+  //Si le nombre de vies est à 0 ou moins, cesser la partie et afficher l'écran de perte.
+  if (lives <= 0) {
+      localStorage.setItem("totalQuestions", questionsKeys.length)
+      location.replace("lose.html");
+  }
 }
 
 function startTimer(timer) {
