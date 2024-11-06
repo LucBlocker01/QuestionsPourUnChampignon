@@ -1,57 +1,58 @@
 async function main() {
-  let timerId
-    //Récupération du quiz
-    quiz = await quizFetcher()
-    //Stockage des vies s'ils n'existent pas
-    !localStorage.getItem("lives") && (localStorage.setItem("lives", JSON.stringify(quiz.lives)))
-    lives = JSON.parse(localStorage.getItem("lives"));
-    //Stockage des questions du quiz s'ils n'existent pas
-    !localStorage.getItem("questions") && (localStorage.setItem("questions", JSON.stringify(quiz.questions)))
-    questions = JSON.parse(localStorage.getItem("questions"));
-    //Définition de qIndex à 0 et afficher la première question
-    qIndex = 0
-    displayQuestion()
+  //Récupération du quiz
+  quiz = await quizFetcher()
+  //Stockage des vies s'ils n'existent pas
+  !localStorage.getItem("lives") && (localStorage.setItem("lives", JSON.stringify(quiz.lives)))
+  lives = JSON.parse(localStorage.getItem("lives"));
+  //Stockage des questions du quiz s'ils n'existent pas
+  !localStorage.getItem("questions") && (localStorage.setItem("questions", JSON.stringify(quiz.questions)))
+  questions = JSON.parse(localStorage.getItem("questions"));
+  //Définition de qIndex à 0 et afficher la première question
+  qIndex = 0
+  displayQuestion()
+  //Si le niveau de difficulté est à "difficile" ou moins
+  if (!["extreme", "impossible"].includes(localStorage.getItem("difficulty"))) {
     //Pour chaque bouton, ajouter comme texte la réponse associé à la question et l'index du bouton, et ajouter un event de clic
     buttons.forEach((button, index) => {
-        button.addEventListener("click", function () {
-            //Si la bonne réponse a été sélectionné, incrémentation de la question +1 dans le stockage, puis rechargement de la page
-            if (button.innerHTML === question.correctAnswer) {
-                document.getElementById("message").innerHTML = "Bonne réponse!"
-                //Si c'était la dernière question, cesser la partie et afficher l'écran de victoire
-                if (qIndex + 1 === questionsKeys.length) {
-                    location.replace("win.html");
-                } else {
-                    //Sinon, afficher la question suivante, réinitialisation du timer et jouer le son correct answer
-                    document.getElementById("correct-answer").currentTime = 0;
-                    document.getElementById("correct-answer").play()
-                    localStorage.setItem("currentQuestion", qIndex + 1)
-                    localStorage.removeItem("timer")
-                    displayQuestion()
-                }
-            } else {
-                //Sinon, diminution du nombre de vies de 1, y compris dans le stockage, et jouer le son de mauvaise réponse
-                document.getElementById("wrong-answer").currentTime = 0
-                document.getElementById("wrong-answer").play()
-                document.getElementById("message").innerHTML = "Mauvaise réponse! -1 vie"
-                lives--
-                document.getElementById("lives").innerHTML = "Vies restantes : " + lives;
-                localStorage.setItem("lives", lives);
-                //Si le nombre de vies est à 0 ou moins, cesser la partie et afficher l'écran de perte.
-                if (lives <= 0) {
-                    localStorage.setItem("totalQuestions", questionsKeys.length)
-                    location.replace("lose.html");
-                }
-            }
-        })
-        //Ajout de la classe correspondant à la difficulté du quiz aux divers composantes de la page
-        document.body.classList.add(quiz.difficulty)
-        document.getElementById("question").classList.add(quiz.difficulty)
-        document.getElementById("progress").classList.add(quiz.difficulty)
-        document.getElementById("lives").classList.add(quiz.difficulty)
-        document.getElementById("timer").classList.add(quiz.difficulty)
-        document.querySelector(".answersList").classList.add(quiz.difficulty)
-        document.querySelector(".header").classList.add(quiz.difficulty)
+      button.addEventListener("click", function () {
+          //Si la bonne réponse a été sélectionné, incrémentation de la question +1 dans le stockage, puis rechargement de la page
+          if (button.innerHTML === question.correctAnswer) {
+              document.getElementById("message").innerHTML = "Bonne réponse!"
+              //Si c'était la dernière question, cesser la partie et afficher l'écran de victoire
+              if (qIndex + 1 === questionsKeys.length) {
+                  location.replace("win.html");
+              } else {
+                  //Sinon, afficher la question suivante, réinitialisation du timer et jouer le son correct answer
+                  document.getElementById("correct-answer").currentTime = 0;
+                  document.getElementById("correct-answer").play()
+                  localStorage.setItem("currentQuestion", qIndex + 1)
+                  localStorage.removeItem("timer")
+                  displayQuestion()
+              }
+          } else {
+              //Sinon, diminution du nombre de vies de 1, y compris dans le stockage, et jouer le son de mauvaise réponse
+              document.getElementById("wrong-answer").currentTime = 0
+              document.getElementById("wrong-answer").play()
+              document.getElementById("message").innerHTML = "Mauvaise réponse! -1 vie"
+              lives--
+              document.getElementById("lives").innerHTML = "Vies restantes : " + lives;
+              localStorage.setItem("lives", lives);
+              //Si le nombre de vies est à 0 ou moins, cesser la partie et afficher l'écran de perte.
+              if (lives <= 0) {
+                  localStorage.setItem("totalQuestions", questionsKeys.length)
+                  location.replace("lose.html");
+              }
+          }
+      })
     })
+  }
+  //Ajout de la classe correspondant à la difficulté du quiz aux divers composantes de la page
+  document.body.classList.add(quiz.difficulty)
+  document.getElementById("question").classList.add(quiz.difficulty)
+  document.getElementById("progress").classList.add(quiz.difficulty)
+  document.getElementById("lives").classList.add(quiz.difficulty)
+  document.getElementById("timer").classList.add(quiz.difficulty)
+  document.querySelector(".header").classList.add(quiz.difficulty)
 }
 
 //Initialisation de l'id du timer
@@ -67,8 +68,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 });
 
 function displayQuestion() {
-    //Récupération des boutons
-    buttons = document.querySelectorAll("button")
     //Récupération des clés (index des questions dans le quiz) de la réponse dans un tableau
     questionsKeys = Object.keys(questions)
     // Si le currentQuestion est mis en stock, l'index est mis à la question actuelle (pour afficher la question suivante et non la première)
@@ -82,13 +81,26 @@ function displayQuestion() {
     document.getElementById("question").innerHTML = question.question
     //Affichage des vies restantes
     document.getElementById("lives").innerHTML = "Vies restantes : " + lives;
-    buttons.forEach((button, index) => {
-        //Affichage des réponses
-        button.innerHTML = question.answers[index]
-        //Si le bouton n'est pas associé à une réponse, le cacher
-        button.innerHTML === "undefined" ? button.classList.add("hide")
-        : button.classList.remove("hide")
-    })
+    //Si le niveau de difficulté est à "difficile" ou moins
+    if (!["extreme", "impossible"].includes(localStorage.getItem("difficulty"))) {
+      //Récupération des boutons
+      buttons = document.querySelectorAll("button")
+      buttons.forEach((button, index) => {
+          //Affichage des réponses
+          button.innerHTML = question.answers[index]
+          //Si le bouton n'est pas associé à une réponse, le cacher
+          button.innerHTML === "undefined" ? button.classList.add("hide")
+          : button.classList.remove("hide")
+      })
+      document.querySelector(".textAnswer").classList.remove("textAnswer")
+      document.querySelector(".answersList").classList.add(quiz.difficulty)
+    } else {
+      //Sinon remplacer le QCM par un input
+      document.querySelector(".answersList").classList.add("hide")
+      document.querySelector(".answersList").classList.remove("answersList")
+      document.querySelector(".textAnswer").classList.remove("hide")
+      document.querySelector(".textAnswer").classList.add(quiz.difficulty)
+    }
     //Gérer le timer
     if (["hard", "extreme", "impossible"].includes(localStorage.getItem("difficulty"))) {
       //Arrêter le timer déjà en route
