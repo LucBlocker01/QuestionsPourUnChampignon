@@ -90,16 +90,19 @@ function displayQuestion() {
         : button.classList.remove("hide")
     })
     //Gérer le timer
-    if (["hard", "impossible"].includes(localStorage.getItem("difficulty"))) {
+    if (["hard", "extreme", "impossible"].includes(localStorage.getItem("difficulty"))) {
       //Arrêter le timer déjà en route
       clearTimeout(timerId)
       //Arrêter le son déjà en route
       tick.pause();
-      //20 secondes pour "difficile", 10 secondes pour "impossible"
+      //20 secondes pour "difficile", 25 secondes pour "extrême" et 10 secondes pour "impossible"
       if (!localStorage.getItem("timer")) {
         switch(localStorage.getItem("difficulty")) {
           case "hard":
             localStorage.setItem("timer", 20);
+            break;
+          case "extreme":
+            localStorage.setItem("timer", 25)
             break;
           case "impossible":
             localStorage.setItem("timer", 10);

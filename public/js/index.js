@@ -20,6 +20,7 @@ let buttons = [
     document.getElementById("easy"),
     document.getElementById("medium"),
     document.getElementById("hard"),
+    document.getElementById("extreme"),
 ]
 
 buttons.forEach((button) => {

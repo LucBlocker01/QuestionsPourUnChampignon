@@ -27,6 +27,10 @@ body.hard {
     background: linear-gradient(white 25%, darkorange 99%);
 }
 
+body.extreme {
+    background: linear-gradient(white 25%, red 99%);
+}
+
 #progress {
     background-color: blue;
     border: solid black 1px;
@@ -48,6 +52,10 @@ body.hard {
     background-color: darkorange;
 }
 
+#progress.extreme {
+    background-color: red;
+}
+
 #question {
     background-color: blue;
     border: solid black 1px;
@@ -67,6 +75,10 @@ body.hard {
 
 #question.hard {
     background-color: darkorange;
+}
+
+#question.extreme {
+    background-color: red;
 }
 
 
@@ -91,13 +103,24 @@ body.hard {
     background-color: darkorange;
 }
 
-#timer.hard {
+#lives.extreme {
+    background-color: red;
+}
+
+#timer {
     padding: 1%;
     font-size: 250%;
     color: white;
     font-weight: bolder;
     border: solid black 1px;
+}
+
+#timer.hard {
     background-color: darkorange;
+}
+
+#timer.extreme {
+    background-color: red;
 }
 
 .answersList {
@@ -131,6 +154,10 @@ body.hard {
     background-color: rgb(248, 201, 99);
 }
 
+.answersList.extreme button {
+    background-color: rgb(251, 172, 163);
+}
+
 .answersList button:hover {
     background-color: blue;
     color: white;
@@ -148,6 +175,11 @@ body.hard {
 
 .answersList.hard button:hover {
     background-color: darkorange;
+    color: white;
+}
+
+.answersList.extreme button:hover {
+    background-color: red;
     color: white;
 }
 
@@ -172,6 +204,12 @@ body.hard {
 .header.hard {
     display: flex;
     background-color : darkorange;
+    height: 10%
+}
+
+.header.extreme {
+    display: flex;
+    background-color : red;
     height: 10%
 }
 

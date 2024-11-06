@@ -144,7 +144,13 @@ function generateQuestions($difficulty) {
                 ["Combien de chambres possède notre coeur?", ["2", "4", "6", "1", "On n'appelle pas ça des chambres"], "4"],
             ];
             break;
-        case "impossible" : [
+        case "extreme" :
+            $dataQ = [
+                ["Quel est la proportion d'eau salée sur Terre?", ["90%", "80%", "50%", "97%", "99%"], "97%"],
+            ];
+            break;
+        case "impossible" :
+            $dataQ = [
                 ["Quel est le tempo le plus rapide?", ["Vivace", "Andante", "Allegro", "Presto", "Adagio"], "Presto"],
                 ["Quel est le tempo moyen d'un morceau de tempo 'Allegro'?", ["108-132 BPM", "76-108 BPM", "140-160 BPM", "60-78 BPM", "132-140 BPM"], "108-132 BPM"],
                 ["Quel symbole musical représente un volume très doux?", ["MF", "F", "FF", "P", "MP"], "P"],
