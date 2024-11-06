@@ -79,16 +79,16 @@ function displayQuestion() {
           button.innerHTML === "undefined" ? button.classList.add("hide")
           : button.classList.remove("hide")
       })
-      document.querySelector(".textAnswer").classList.remove("textAnswer")
+      //document.querySelector(".textAnswer").classList.remove("textAnswer")
       document.querySelector(".answersList").classList.add(quiz.difficulty)
     } else {
       //Sinon remplacer le QCM par un input
       document.querySelector(".answersList").classList.add("hide")
-      document.querySelector(".answersList").classList.remove("answersList")
       document.querySelector(".textAnswer").classList.remove("hide")
       document.querySelector(".textAnswer").classList.add(quiz.difficulty)
     }
     //Gérer le timer
+    console.log("timer")
     if (["hard", "extreme", "impossible"].includes(localStorage.getItem("difficulty"))) {
       //Arrêter le timer déjà en route
       clearTimeout(timerId)
@@ -98,6 +98,7 @@ function displayQuestion() {
       if (!localStorage.getItem("timer")) {
         switch(localStorage.getItem("difficulty")) {
           case "hard":
+            console.log("a")
             localStorage.setItem("timer", 20);
             break;
           case "extreme":
@@ -111,6 +112,7 @@ function displayQuestion() {
       //Afficher le timer
       document.getElementById("timer").classList.remove("hide")
       //Démarrage du timer
+      console.log(localStorage.getItem("timer"))
       startTimer(localStorage.getItem("timer"));
     }
 }

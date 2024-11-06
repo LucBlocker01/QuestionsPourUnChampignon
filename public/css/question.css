@@ -1,7 +1,3 @@
-.hide {
-    display: none;
-}
-
 body.loading {
     visibility: hidden;
 }
@@ -225,4 +221,8 @@ body.extreme {
     margin-left: 2%;
     margin-bottom: 2%;
     display: flex;
+}
+
+.hide {
+    display: none;
 }

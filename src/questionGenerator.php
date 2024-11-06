@@ -146,7 +146,36 @@ function generateQuestions($difficulty) {
             break;
         case "extreme" :
             $dataQ = [
-                ["Quel est la proportion d'eau salée sur Terre?", ["90%", "80%", "50%", "97%", "99%"], "test"],
+                ["Quel est le plus grand organe du corps humain?", [], "peau"],
+                ["Quel est le plus grand organe du corps humain?", [], "peau"],
+                ["Quel est le plus grand organe du corps humain?", [], "peau"],
+                ["Quel est le plus grand organe du corps humain?", [], "peau"],
+                ["Quel est le plus grand organe du corps humain?", [], "peau"],
+                ["Quel est le plus grand organe du corps humain?", [], "peau"],
+                ["Quel est le plus grand organe du corps humain?", [], "peau"],
+                ["Quel est le plus grand organe du corps humain?", [], "peau"],
+                ["Quel est le plus grand organe du corps humain?", [], "peau"],
+                ["Quel est le plus grand organe du corps humain?", [], "peau"],
+                ["Quel est le plus grand organe du corps humain?", [], "peau"],
+                ["Quel est le plus grand organe du corps humain?", [], "peau"],
+                ["Quel est le plus grand organe du corps humain?", [], "peau"],
+                ["Quel est le plus grand organe du corps humain?", [], "peau"],
+                ["Quel est le plus grand organe du corps humain?", [], "peau"],
+                ["Quel est le plus grand organe du corps humain?", [], "peau"],
+                ["Quel est le plus grand organe du corps humain?", [], "peau"],
+                ["Quel est le plus grand organe du corps humain?", [], "peau"],
+                ["Quel est le plus grand organe du corps humain?", [], "peau"],
+                ["Quel est le plus grand organe du corps humain?", [], "peau"],
+                ["Quel est le plus grand organe du corps humain?", [], "peau"],
+                ["Quel est le plus grand organe du corps humain?", [], "peau"],
+                ["Quel est le plus grand organe du corps humain?", [], "peau"],
+                ["Quel est le plus grand organe du corps humain?", [], "peau"],
+                ["Quel est le plus grand organe du corps humain?", [], "peau"],
+                ["Quel est le plus grand organe du corps humain?", [], "peau"],
+                ["Quel est le plus grand organe du corps humain?", [], "peau"],
+                ["Quel est le plus grand organe du corps humain?", [], "peau"],
+                ["Quel est le plus grand organe du corps humain?", [], "peau"],
+                ["Quel est le plus grand organe du corps humain?", [], "peau"],
             ];
             break;
         case "impossible" :
