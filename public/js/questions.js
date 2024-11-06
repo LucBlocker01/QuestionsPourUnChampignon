@@ -160,6 +160,7 @@ function startTimer(timer) {
     }
   } else {
     //Sinon, perdu!
+    localStorage.setItem("totalQuestions", questionsKeys.length)
     location.replace("lose.html")
   }
 }
