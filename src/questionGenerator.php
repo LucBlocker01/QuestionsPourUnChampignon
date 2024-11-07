@@ -180,9 +180,9 @@ function generateQuestions($difficulty) {
             break;
         case "impossible" :
             $dataQ = [
-                ["Quel est le tempo le plus rapide?", ["Vivace", "Andante", "Allegro", "Presto", "Adagio"], "Presto"],
-                ["Quel est le tempo moyen d'un morceau de tempo 'Allegro'?", ["108-132 BPM", "76-108 BPM", "140-160 BPM", "60-78 BPM", "132-140 BPM"], "108-132 BPM"],
-                ["Quel symbole musical représente un volume très doux?", ["MF", "F", "FF", "P", "MP"], "P"],
+                ["Quel est le tempo le plus rapide?", ["Vivace", "Andante", "Allegro", "Presto", "Adagio"], "presto"],
+                ["Quel est le tempo moyen d'un morceau de tempo 'Allegro' en BPM?", ["108-132 BPM", "76-108 BPM", "140-160 BPM", "60-78 BPM", "132-140 BPM"], "108-132"],
+                ["Quel symbole musical représente un volume très doux?", ["MF", "F", "FF", "P", "MP"], "p"],
             ];
             break;
     }

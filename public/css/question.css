@@ -27,6 +27,10 @@ body.extreme {
     background: linear-gradient(white 25%, red 99%);
 }
 
+body.impossible {
+    background: black
+}
+
 #progress {
     background-color: blue;
     border: solid black 1px;
@@ -50,6 +54,10 @@ body.extreme {
 
 #progress.extreme {
     background-color: red;
+}
+
+#progress.impossible {
+    background-color: rgb(0, 0, 58);
 }
 
 #question {
@@ -77,6 +85,9 @@ body.extreme {
     background-color: red;
 }
 
+#question.impossible {
+    background-color: rgb(0, 0, 58);
+}
 
 #lives {
     background-color: blue;
@@ -103,6 +114,10 @@ body.extreme {
     background-color: red;
 }
 
+#lives.impossible {
+    background-color: rgb(0, 0, 58);
+}
+
 #timer {
     padding: 1%;
     font-size: 250%;
@@ -117,6 +132,10 @@ body.extreme {
 
 #timer.extreme {
     background-color: red;
+}
+
+#timer.impossible {
+    background-color: rgb(0, 0, 58);
 }
 
 .answersList, .textAnswer {
@@ -154,6 +173,12 @@ body.extreme {
     background-color: red;
 }
 
+.textAnswer.impossible button {
+    background-color: rgb(0, 0, 26);
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
 .answersList button:hover {
     background-color: blue;
     color: white;
@@ -177,6 +202,10 @@ body.extreme {
 .textAnswer.extreme button:hover {
     background-color: rgb(251, 172, 163);
     color: white;
+}
+
+.textAnswer.impossible button:hover {
+    background-color: rgb(0, 0, 58);
 }
 
 .header.veryeasy {
@@ -226,6 +255,15 @@ body.extreme {
 .textAnswer.extreme input {
     background-color : rgb(251, 172, 163);
     border : solid black 1px;
+    padding: 2%;
+    width: 35%;
+
+}
+
+.textAnswer.impossible input {
+    background-color : black;
+    border : solid white 1px;
+    color: white;
     padding: 2%;
     width: 35%;
 
