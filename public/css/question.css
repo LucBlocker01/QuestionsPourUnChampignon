@@ -223,6 +223,14 @@ body.extreme {
     display: flex;
 }
 
+.textAnswer.extreme input {
+    background-color : rgb(251, 172, 163);
+    border : solid black 1px;
+    padding: 2%;
+    width: 35%;
+
+}
+
 .hide {
     display: none;
 }

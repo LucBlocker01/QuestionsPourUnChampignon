@@ -27,6 +27,7 @@ async function main() {
     document.getElementById("validation").addEventListener("click",function () {
       //Si la bonne réponse a été sélectionné, incrémentation de la question +1 dans le stockage, puis rechargement de la page
       if (document.querySelector("input").value.toLowerCase() === question.correctAnswer) {
+        document.querySelector("input").value = ""
         correct()
       } else {
         wrong()
