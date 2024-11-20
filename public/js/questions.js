@@ -106,7 +106,7 @@ function displayQuestion() {
             localStorage.setItem("timer", 25)
             break;
           case "impossible":
-            localStorage.setItem("timer", 10);
+            localStorage.setItem("timer", 15);
             break;
         }
       }
